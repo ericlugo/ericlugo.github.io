@@ -1,0 +1,31 @@
+{
+  "name": "eric-lugo-s-dev-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "eric-lugo-s-dev-blog",
+  "author": "Eric Lugo",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public -b production && gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^2.1.5",
+    "gatsby": "^5.0.0",
+    "gatsby-plugin-mdx": "^5.0.0",
+    "gatsby-plugin-sass": "^6.0.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.56.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
