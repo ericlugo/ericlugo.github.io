@@ -1,39 +1,69 @@
+<h2 align="center">Dev Blog</h2>
+<h3 align="center">Based on: <em>Gatsby minimal starter</em></h3>
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+
+<hr><br><br>
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **To get started**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+    Make sure you have the correct dependencies in place. Ideally, do yourself a favor and make sure you're using `nvm` first! Then, you should be using `node LTS` and `gatsby-cli`.
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    # Check Versions:
+    nvm --version           # v0.39.2
+    node --version          # v18.2.1
+    gatsby --version        # v5.0.0
+
+    
+    # If any of the above are not installed, you can use the following steps...
+
+    # NVM (more info here https://github.com/nvm-sh/nvm):
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
+    # NODE:
+    nvm ls-remote --lts     # lists available lts versions
+    nvm install --lts       # installs latest lts version
+
+    # GATSBY-CLI:
+    npm install -g gatsby-cli
     ```
 
-3.  **Open the code and start customizing!**
+    Now it's time to clone the repo and do you first-time setup!
+    
+    ```shell
+    # Navigate to your code directory first!
+    git clone git@github.com:ericlugo/ericlugo.github.io.git
+    cd ericlugo.github.io/
+    npm install             # installs the project dependencies
+    ```
 
-    Your site is now running at http://localhost:8000!
+2.  **Start developing**
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Navigate into your site’s directory and start it up!!!
 
-4.  **Learn more**
+    ```shell
+    cd ericlugo.github.io/  # if you're note already in it...
+    npm run dev
+    ```
+
+3.  **Open the code and start customizing**
+
+    Your site is now running at <http://localhost:8000>
+
+    You can view GraphiQL at <http://localhost:8000/___graphql>
+
+    Other things to note:
+    - Commit your changes as normal to the `master` branch.
+    - You can always switch to other branches locally to work on new features if you want to though its not necessary.
+    - Keep in mind nothing that you see during development will be visible until it is deployed!
+
+4.  **Learn more about Gatsby**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
@@ -47,8 +77,12 @@
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-## 🚀 Quick start (Gatsby Cloud)
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+5.  **To Deploy**
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+    Time to deploy some changes? Nice and easy from here!
+
+    ```shell
+    # build, add CNAME, push build directory to production branch, clean build artifacts
+    npm run full-deploy
+    ```

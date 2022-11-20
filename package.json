@@ -1,19 +1,20 @@
 {
-  "name": "eric-lugo-s-dev-blog",
+  "name": "eric-lugo-dev-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "eric-lugo-s-dev-blog",
+  "description": "eric-lugo-dev-blog",
   "author": "Eric Lugo",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -b production && gatsby clean"
+    "add-domain": "echo \"ericlugo.dev\" > public/CNAME",
+    "deploy": "gh-pages -d public -b production",
+    "full-deploy": "npm run build && npm run add-domain && npm run deploy && npm run clean"
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
