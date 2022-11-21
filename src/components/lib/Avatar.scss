@@ -1,0 +1,42 @@
+#Avatar {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  border: var(--borderWidth) solid var(--accentTranslucentDark);
+  padding: 0.5rem 0 .2rem;
+  left: 0;
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--background);
+
+  &[data-large="true"] {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  svg {
+    margin: 0 auto;
+
+    .background-one {
+      fill: var(--accentDark);
+    }
+
+    .background-two {
+      fill: var(--accentLight);
+    }
+
+    .main,
+    .accent {
+      fill: var(--foreground);
+    }
+  }
+}
+
+.darkmode #Avatar {
+  background-color: var(--foreground);
+
+  svg .main,
+  svg .accent {
+    fill: var(--background);
+  }
+}

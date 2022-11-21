@@ -1,0 +1,168 @@
+
+
+/* ============================== Josh's Custom CSS Reset ============================== */
+// FOR MORE, SEE: https://www.joshwcomeau.com/css/custom-css-reset/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+
+/* ============================== Theme Sets ============================== */
+
+:root {
+  
+  // PALETTE
+  --background: #EFF1F3;
+  --card: #FCFCFC;
+  --foreground: #2F323A;
+  --accentDark: #CB3BFD;
+  --accentTranslucentDark: #CB3BFD9C;
+  --accentLight: #FD1999;
+  --accentTranslucentLight: #FD19999C;
+
+  // TYPOGRAPHY
+  --mainFontFamily: 'IBM Plex Sans', sans-serif;
+  --codeFontFamily: 'Fira Code', monospace;
+  --fontBase: 100%; //around 16px, but can be overwritten in browser settings. I will be setting the base font to this so that all fonts scale based on user settings.
+  --baseLineHeight: 1.45rem; //base font will have the greatest spacing but all headings will also have slightly expanded line heights
+  --h1Size: 3.05rem; //around 49px
+  --h1LineHeight: calc(3.05rem * 1.1);
+  --h2Size: 2.44rem; //around 39px
+  --h2LineHeight: calc(2.44rem * 1.1);
+  --h3Size: 1.96rem; //around 31px
+  --h3LineHeight: calc(1.96rem * 1.1);
+  --h4Size: 1.56rem; //around 25px
+  --h4LineHeight: calc(1.56rem * 1.1);
+  --h5Size: 1.25rem; //around 20px
+  --h5LineHeight: calc(1.25rem * 1.1);
+  --h6Size: 0.80rem; //around 13px
+  --h6LineHeight: calc(0.80rem * 1.1);
+
+  // SPACING
+  --mainPadding: 1rem;
+  --mainMargin: 1rem;
+  --borderWidth: 2px;
+  --borderRadius: 1rem;
+
+  // BREAKPOINTS
+  --breakpoint_xs: 576px;
+  --breakpoint_sm: 768px;
+  --breakpoint_md: 992px;
+  --breakpoint_lg: 1200px;
+}
+
+.darkmode {
+  
+  // PALETTE
+  --background: #2F323A;
+  --card: #435058;
+  --foreground: #EFF1F3;
+  --accentDark: #CB3BFD;
+  --accentTranslucentDark: #CB3BFD9C;
+  --accentLight: #FD1999;
+  --accentTranslucentLight: #FD19999C;
+}
+
+
+/* ============================== Generic Styles ============================== */
+
+body {
+  font-family: var(--mainFontFamily);
+  font-size: var(--fontBase);
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color .15s ease-in, color .15s ease-in;
+}
+
+h1 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h1Size);
+  line-height: var(--h1LineHeight);
+}
+
+h2 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h2Size);
+  line-height: var(--h2LineHeight);
+}
+
+h3 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h3Size);
+  line-height: var(--h3LineHeight);
+}
+
+h4 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h4Size);
+  line-height: var(--h4LineHeight);
+}
+
+h5 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h5Size);
+  line-height: var(--h5LineHeight);
+}
+
+h6 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
+}
+
+a {
+  font-family: var(--codeFontFamily);
+  text-decoration: none;
+  color: var(--accentDark);
+  transition: color .15s ease-in;
+
+  &:hover {
+    color: var(--accentLight);
+  }
+}
+
+p {
+  line-height: var(--baseLineHeight);
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  font-family: var(--codeFontFamily);
+}
+
+small {
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
+}
