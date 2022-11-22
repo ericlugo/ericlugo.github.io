@@ -166,3 +166,22 @@ small {
   font-size: var(--h6Size);
   line-height: var(--h6LineHeight);
 }
+
+#layoutContainer {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  transition: color .15s ease-in, background-color .15s ease-in;
+}
+
+.widthContainer {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--breakpoint_md);
+
+  @media (max-width: var(--breakpoint_md)) {
+    padding: 0 0.5rem;
+  }
+}

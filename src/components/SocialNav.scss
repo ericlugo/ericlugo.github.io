@@ -1,0 +1,38 @@
+.socialNav {
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: var(--accentDark);
+  
+    &:hover,
+    &:active {
+      color: var(--accentLight);
+    }
+  
+    svg {
+      font-size: calc(var(--fontBase) * 1.1);
+      stroke-width: 2px;
+    }
+  
+    .name {
+      margin-right: 0.5em;
+    }
+  
+    @media (min-width: var(--breakpoint_xs)) {
+      display: block;
+      text-align: center;
+      
+      svg {
+        font-size: var(--h3Size);
+        stroke-width: 1px;
+      }
+      
+      .name {
+        margin: 0;
+        display: none;
+      }
+    }
+  }
+}

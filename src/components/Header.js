@@ -1,6 +1,6 @@
 import React from "react";
 
-import Avatar from "./lib/Avatar";
+import Avatar from "./Avatar";
 
 
 const Header = ({className, largeAvatar}) => (

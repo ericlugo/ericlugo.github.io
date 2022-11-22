@@ -4,10 +4,10 @@ import Header from "../components/Header";
 
 
 const Layout = ({children}) => (
-  <>
-    <Header largeAvatar={true}/>
+  <div id="layoutContainer">
+    <Header largeAvatar={true} />
     {children}
-  </>
+  </div>
 );
 
 export default Layout;

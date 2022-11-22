@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import { Location } from "@reach/router";
 
-import { navLinks } from "../../data/links";
+import navLinks from "../data/navLinks";
+import './MainNav.scss';
 
 const NavLink = ({item, isCurrentPath}) => {
   const arrow = isCurrentPath ? '-->' : '>';
