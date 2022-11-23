@@ -12,4 +12,5 @@ const Header = ({className, largeAvatar}) => (
   </header>
 );
 
+
 export default Header;

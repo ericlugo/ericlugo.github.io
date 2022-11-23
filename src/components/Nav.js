@@ -3,13 +3,14 @@ import { Link } from "gatsby";
 import { Location } from "@reach/router";
 
 import navLinks from "../data/navLinks";
-import './MainNav.scss';
+
 
 const NavLink = ({item, isCurrentPath}) => {
   const arrow = isCurrentPath ? '-->' : '>';
 
   return <Link to={item.path}> <span className="arrow">{arrow}</span> {item.label} </Link>
 };
+
 
 const MainNav = ({className}) => (
   <Location>
@@ -23,5 +24,6 @@ const MainNav = ({className}) => (
     )}
   </Location>
 );
+
 
 export default MainNav;

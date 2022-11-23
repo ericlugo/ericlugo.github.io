@@ -17,6 +17,8 @@
     "full-deploy": "npm run build && npm run add-domain && npm run deploy && npm run clean"
   },
   "dependencies": {
+    "@fontsource/fira-code": "^4.5.12",
+    "@fontsource/ibm-plex-sans": "^4.5.13",
     "@mdx-js/react": "^2.1.5",
     "gatsby": "^5.0.0",
     "gatsby-plugin-mdx": "^5.0.0",

@@ -1,0 +1,61 @@
+/* ============================== Theme Sets ============================== */
+
+:root {
+  
+  // DEFAULT PALETTE
+  --background: #EFF1F3;
+  --card: #FCFCFC;
+  --foreground: #2F323A;
+  --accentDark: #CB3BFD;
+  --accentTranslucentDark: #CB3BFD9C;
+  --accentLight: #FD1999;
+  --accentTranslucentLight: #FD19999C;
+}
+
+.darkmode {
+  
+  // DARKMODE PALETTE
+  --background: #2F323A;
+  --card: #435058;
+  --foreground: #EFF1F3;
+  --accentDark: #CB3BFD;
+  --accentTranslucentDark: #CB3BFD9C;
+  --accentLight: #FD1999;
+  --accentTranslucentLight: #FD19999C;
+}
+
+
+/* ============================== Theme Sets ============================== */
+
+:root {
+
+  // TYPOGRAPHY
+  --mainFontFamily: 'IBM Plex Sans', sans-serif;
+  --codeFontFamily: 'Fira Code', monospace;
+  --fontBase: 100%; //around 16px, but can be overwritten in browser settings. I will be setting the base font to this so that all fonts scale based on user settings.
+  --baseLineHeight: 1.45rem; //base font will have the greatest spacing but all headings will also have slightly expanded line heights
+  --h1Size: 3.05rem; //around 49px
+  --h1LineHeight: calc(3.05rem * 1.1);
+  --h2Size: 2.44rem; //around 39px
+  --h2LineHeight: calc(2.44rem * 1.1);
+  --h3Size: 1.96rem; //around 31px
+  --h3LineHeight: calc(1.96rem * 1.1);
+  --h4Size: 1.56rem; //around 25px
+  --h4LineHeight: calc(1.56rem * 1.1);
+  --h5Size: 1.25rem; //around 20px
+  --h5LineHeight: calc(1.25rem * 1.1);
+  --h6Size: 0.80rem; //around 13px
+  --h6LineHeight: calc(0.80rem * 1.1);
+
+  // SPACING
+  --mainPadding: 1rem;
+  --mainMargin: 1rem;
+  --borderWidth: 2px;
+  --borderRadius: 1rem;
+
+  // BREAKPOINTS
+  --breakpoint_xs: 576px;
+  --breakpoint_sm: 768px;
+  --breakpoint_md: 992px;
+  --breakpoint_lg: 1200px;
+}

@@ -1,0 +1,75 @@
+/* ============================== Typographic Styles ============================== */
+
+body {
+  font-family: var(--mainFontFamily);
+  font-size: var(--fontBase);
+  font-weight: 400;
+  color: var(--foreground);
+}
+
+h1 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h1Size);
+  line-height: var(--h1LineHeight);
+}
+
+h2 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h2Size);
+  line-height: var(--h2LineHeight);
+}
+
+h3 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h3Size);
+  line-height: var(--h3LineHeight);
+}
+
+h4 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h4Size);
+  line-height: var(--h4LineHeight);
+}
+
+h5 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h5Size);
+  line-height: var(--h5LineHeight);
+}
+
+h6 {
+  font-family: var(--mainFontFamily);
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
+}
+
+a {
+  font-family: var(--codeFontFamily);
+  text-decoration: none;
+  color: var(--accentDark);
+
+  &:hover {
+    color: var(--accentLight);
+  }
+}
+
+p {
+  line-height: var(--baseLineHeight);
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+code {
+  font-family: var(--codeFontFamily);
+}
+
+small {
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
+}

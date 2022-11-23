@@ -1,7 +1,6 @@
 import React from "react";
 
 import socialLinks from "../data/socialLinks";
-import './SocialNav.scss';
 
 
 const SocialNav = ({ className }) => (
