@@ -14,7 +14,8 @@
     "clean": "gatsby clean",
     "add-domain": "echo \"ericlugo.dev\" > public/CNAME",
     "deploy": "gh-pages -d public -b production",
-    "full-deploy": "npm run build && npm run add-domain && npm run deploy && npm run clean"
+    "full-deploy": "npm run build && npm run add-domain && npm run deploy && npm run clean",
+    "stop-telemetry": "gatsby telemetry --disable"
   },
   "dependencies": {
     "@fontsource/fira-code": "^4.5.12",
