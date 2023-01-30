@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import MainNav from "../components/Nav";
 import SocialNav from "../components/SocialNav";
 
+import '../sass/layouts/home.scss';
+
 
 const Layout = ({children}) => (
   <div id="layoutContainer">

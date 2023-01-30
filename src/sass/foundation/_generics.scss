@@ -1,4 +1,16 @@
-/* ============================== Typographic Styles ============================== */
+/* == Generic Styles ======================================================= */
+
+body {
+  background-color: var(--background);
+  transition: background-color .15s ease-in, color .15s ease-in;
+}
+
+a {
+  transition: color .15s ease-in;
+}
+
+
+/* == Typographic Styles =================================================== */
 
 body {
   font-family: var(--mainFontFamily);
