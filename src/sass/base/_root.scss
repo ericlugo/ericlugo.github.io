@@ -1,61 +1,63 @@
-/* ============================== Theme Sets ============================== */
+@use "sass:map";
+@use "../abstracts" as *;
+
+
+/* == Theme Sets =========================================================== */
 
 :root {
   
-  // DEFAULT PALETTE
-  --background: #EFF1F3;
-  --card: #FCFCFC;
-  --foreground: #2F323A;
-  --accentDark: #CB3BFD;
-  --accentTranslucentDark: #CB3BFD9C;
-  --accentLight: #FD1999;
-  --accentTranslucentLight: #FD19999C;
+  /* TYPOGRAPHY - FONT FAMILIES */
+  --mainFontFamily:         #{ map.get($fontFamily, "main") };
+  --codeFontFamily:         #{ map.get($fontFamily, "code") };
+
+  /* TYPOGRAPHY - FONT SIZES */
+  --fontBase:               #{ map.get($fontSize, "base") };
+  --h1Size:                 #{ map.get($fontSize, "h1") };
+  --h2Size:                 #{ map.get($fontSize, "h2") };
+  --h3Size:                 #{ map.get($fontSize, "h3") };
+  --h4Size:                 #{ map.get($fontSize, "h4") };
+  --h5Size:                 #{ map.get($fontSize, "h5") };
+  --h6Size:                 #{ map.get($fontSize, "h6") };
+
+  /* TYPOGRPHY - LINE HEIGHTS */
+  --baseLineHeight:         #{ map.get($lineHeight, "base") };
+  --h1LineHeight:           #{ map.get($lineHeight, "h1") };
+  --h2LineHeight:           #{ map.get($lineHeight, "h2") };
+  --h3LineHeight:           #{ map.get($lineHeight, "h3") };
+  --h4LineHeight:           #{ map.get($lineHeight, "h4") };
+  --h5LineHeight:           #{ map.get($lineHeight, "h5") };
+  --h6LineHeight:           #{ map.get($lineHeight, "h6") };
+
+  /* SPACING */
+  --mainPadding:            #{ $referenceSpacing };
+  --mainMargin:             #{ $referenceSpacing };
+  --borderRadius:           #{ $referenceSpacing };
+  --borderWidth:            #{ $referenceLineWidth };
+  
+  /* BREAKPOINTS */
+  --breakpoint_xs:          #{ map.get($breakpoint, "xs") };
+  --breakpoint_sm:          #{ map.get($breakpoint, "sm") };
+  --breakpoint_md:          #{ map.get($breakpoint, "md") };
+  --breakpoint_lg:          #{ map.get($breakpoint, "lg") };
+
+  /* DEFAULT PALETTE */
+  --background:             #{ map.get($color-default, "background") };
+  --card:                   #{ map.get($color-default, "card") };
+  --foreground:             #{ map.get($color-default, "foreground") };
+  --accentDark:             #{ map.get($color-default, "accentDark") };
+  --accentTranslucentDark:  #{ map.get($color-default, "accentTranslucentDark") };
+  --accentLight:            #{ map.get($color-default, "accentLight") };
+  --accentTranslucentLight: #{ map.get($color-default, "accentTranslucentLight") };
 }
 
 .darkmode {
   
-  // DARKMODE PALETTE
-  --background: #2F323A;
-  --card: #435058;
-  --foreground: #EFF1F3;
-  --accentDark: #CB3BFD;
-  --accentTranslucentDark: #CB3BFD9C;
-  --accentLight: #FD1999;
-  --accentTranslucentLight: #FD19999C;
-}
-
-
-/* ============================== Theme Sets ============================== */
-
-:root {
-
-  // TYPOGRAPHY
-  --mainFontFamily: 'IBM Plex Sans', sans-serif;
-  --codeFontFamily: 'Fira Code', monospace;
-  --fontBase: 100%; //around 16px, but can be overwritten in browser settings. I will be setting the base font to this so that all fonts scale based on user settings.
-  --baseLineHeight: 1.45rem; //base font will have the greatest spacing but all headings will also have slightly expanded line heights
-  --h1Size: 3.05rem; //around 49px
-  --h1LineHeight: calc(3.05rem * 1.1);
-  --h2Size: 2.44rem; //around 39px
-  --h2LineHeight: calc(2.44rem * 1.1);
-  --h3Size: 1.96rem; //around 31px
-  --h3LineHeight: calc(1.96rem * 1.1);
-  --h4Size: 1.56rem; //around 25px
-  --h4LineHeight: calc(1.56rem * 1.1);
-  --h5Size: 1.25rem; //around 20px
-  --h5LineHeight: calc(1.25rem * 1.1);
-  --h6Size: 0.80rem; //around 13px
-  --h6LineHeight: calc(0.80rem * 1.1);
-
-  // SPACING
-  --mainPadding: 1rem;
-  --mainMargin: 1rem;
-  --borderWidth: 2px;
-  --borderRadius: 1rem;
-
-  // BREAKPOINTS
-  --breakpoint_xs: 576px;
-  --breakpoint_sm: 768px;
-  --breakpoint_md: 992px;
-  --breakpoint_lg: 1200px;
+  /* DARKMODE PALETTE */
+  --background:             #{ map.get($color-dark, "background") };
+  --card:                   #{ map.get($color-dark, "card") };
+  --foreground:             #{ map.get($color-dark, "foreground") };
+  --accentDark:             #{ map.get($color-dark, "accentDark") };
+  --accentTranslucentDark:  #{ map.get($color-dark, "accentTranslucentDark") };
+  --accentLight:            #{ map.get($color-dark, "accentLight") };
+  --accentTranslucentLight: #{ map.get($color-dark, "accentTranslucentLight") };
 }

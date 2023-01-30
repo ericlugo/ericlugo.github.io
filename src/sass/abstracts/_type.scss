@@ -1,0 +1,30 @@
+@use "sass:map";
+
+
+$fontFamily: (
+  "main": "'IBM Plex Sans', sans-serif",
+  "code": "'Fira Code', monospace",
+);
+
+
+$fontSize: (
+  "base": 100%, //around 16px, but can be overwritten in browser settings. I will be setting the base font to this so that all fonts scale based on user settings.
+  "h6": 0.80rem, //around 13px
+  "h5": 1.25rem, //around 20px
+  "h4": 1.56rem, //around 25px
+  "h3": 1.96rem, //around 31px
+  "h2": 2.44rem, //around 39px
+  "h1": 3.05rem, //around 49px
+);
+
+
+$lineHeightModifier: 1.1;
+$lineHeight: (
+  "base": 1.45rem, //base font will have the greatest spacing but all headings will also have slightly expanded line heights
+  "h6": calc(map-get($fontSize, "h6") * $lineHeightModifier),
+  "h5": calc(map-get($fontSize, "h5") * $lineHeightModifier),
+  "h4": calc(map-get($fontSize, "h4") * $lineHeightModifier),
+  "h3": calc(map-get($fontSize, "h3") * $lineHeightModifier),
+  "h2": calc(map-get($fontSize, "h2") * $lineHeightModifier),
+  "h1": calc(map-get($fontSize, "h1") * $lineHeightModifier),
+);
