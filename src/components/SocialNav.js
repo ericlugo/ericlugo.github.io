@@ -1,6 +1,7 @@
-import React from "react";
+import React from "react"
 
-import socialLinks from "../data/socialLinks";
+import socialLinks from "../data/socialLinks"
+import "../sass/components/SocialNav.scss"
 
 
 const SocialNav = ({ className }) => (
@@ -12,7 +13,7 @@ const SocialNav = ({ className }) => (
       </a>
     ))}
   </div>
-);
+)
 
 
-export default SocialNav;
+export default SocialNav

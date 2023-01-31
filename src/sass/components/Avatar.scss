@@ -1,10 +1,11 @@
-#Avatar {
+/* == Avatar =============================================================== */
+
+#avatar {
   display: inline-block;
   position: relative;
   border-radius: 50%;
   border: var(--borderWidth) solid var(--accentTranslucentDark);
   padding: 0.5rem 0 .2rem;
-  left: 0;
   height: 4rem;
   width: 4rem;
   background-color: var(--background);
@@ -32,7 +33,7 @@
   }
 }
 
-.darkmode #Avatar {
+[data-theme="dark"] #avatar {
   background-color: var(--foreground);
 
   svg .main,

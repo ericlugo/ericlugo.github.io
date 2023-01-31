@@ -10,7 +10,7 @@ import '../sass/layouts/home.scss';
 
 const Layout = ({children}) => (
   <div id="layoutContainer">
-    <Header className="homeHeader" largeAvatar={true} />
+    <Header className="siteHeader" largeAvatar={true} />
     <main>
       <section className="widthContainer">
         <h1>

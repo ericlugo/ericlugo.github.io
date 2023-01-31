@@ -6,11 +6,11 @@
 
 :root {
   
-  /* TYPOGRAPHY - FONT FAMILIES */
+  /* Typography - Font Families */
   --mainFontFamily:         #{ map.get($fontFamily, "main") };
   --codeFontFamily:         #{ map.get($fontFamily, "code") };
 
-  /* TYPOGRAPHY - FONT SIZES */
+  /* Typography - Font Sizes */
   --fontBase:               #{ map.get($fontSize, "base") };
   --h1Size:                 #{ map.get($fontSize, "h1") };
   --h2Size:                 #{ map.get($fontSize, "h2") };
@@ -19,7 +19,7 @@
   --h5Size:                 #{ map.get($fontSize, "h5") };
   --h6Size:                 #{ map.get($fontSize, "h6") };
 
-  /* TYPOGRPHY - LINE HEIGHTS */
+  /* Typography - Line Heights */
   --baseLineHeight:         #{ map.get($lineHeight, "base") };
   --h1LineHeight:           #{ map.get($lineHeight, "h1") };
   --h2LineHeight:           #{ map.get($lineHeight, "h2") };
@@ -28,19 +28,19 @@
   --h5LineHeight:           #{ map.get($lineHeight, "h5") };
   --h6LineHeight:           #{ map.get($lineHeight, "h6") };
 
-  /* SPACING */
+  /* Spacing */
   --mainPadding:            #{ $referenceSpacing };
   --mainMargin:             #{ $referenceSpacing };
   --borderRadius:           #{ $referenceSpacing };
   --borderWidth:            #{ $referenceLineWidth };
   
-  /* BREAKPOINTS */
+  /* Breakpoints */
   --breakpoint_xs:          #{ map.get($breakpoint, "xs") };
   --breakpoint_sm:          #{ map.get($breakpoint, "sm") };
   --breakpoint_md:          #{ map.get($breakpoint, "md") };
   --breakpoint_lg:          #{ map.get($breakpoint, "lg") };
 
-  /* DEFAULT PALETTE */
+  /* Default Palette */
   --background:             #{ map.get($color-default, "background") };
   --card:                   #{ map.get($color-default, "card") };
   --foreground:             #{ map.get($color-default, "foreground") };
@@ -50,9 +50,9 @@
   --accentTranslucentLight: #{ map.get($color-default, "accentTranslucentLight") };
 }
 
-.darkmode {
+[data-theme="dark"]:root {
   
-  /* DARKMODE PALETTE */
+  /* Darkmode Palette */
   --background:             #{ map.get($color-dark, "background") };
   --card:                   #{ map.get($color-dark, "card") };
   --foreground:             #{ map.get($color-dark, "foreground") };

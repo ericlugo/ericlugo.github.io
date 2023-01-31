@@ -85,3 +85,27 @@ small {
   font-size: var(--h6Size);
   line-height: var(--h6LineHeight);
 }
+
+/* == Generic Containers =================================================== */
+
+#layoutContainer {
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  transition: color .15s ease-in, background-color .15s ease-in;
+}
+
+.widthContainer {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--breakpoint_md);
+
+  @media (max-width: var(--breakpoint_md)) {
+    padding: 0 0.5rem;
+  }
+}
+
+.siteHeader .widthContainer {
+  padding: var(--mainPadding) 0;
+}

@@ -1,15 +1,16 @@
-import React from "react";
-import { Link } from "gatsby";
-import { Location } from "@reach/router";
+import React from "react"
+import { Link } from "gatsby"
+import { Location } from "@reach/router"
 
-import navLinks from "../data/navLinks";
+import navLinks from "../data/navLinks"
+import "../sass/components/Nav.scss"
 
 
 const NavLink = ({item, isCurrentPath}) => {
-  const arrow = isCurrentPath ? '-->' : '>';
+  const arrow = isCurrentPath ? '-->' : '>'
 
   return <Link to={item.path}> <span className="arrow">{arrow}</span> {item.label} </Link>
-};
+}
 
 
 const MainNav = ({className}) => (
@@ -23,7 +24,7 @@ const MainNav = ({className}) => (
       </div>
     )}
   </Location>
-);
+)
 
 
-export default MainNav;
+export default MainNav

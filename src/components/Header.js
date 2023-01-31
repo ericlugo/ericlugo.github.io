@@ -1,6 +1,7 @@
-import React from "react";
+import React from "react"
 
-import Avatar from "./Avatar";
+import Avatar from "./Avatar"
+import ThemeToggle from "./ThemeToggle"
 
 
 const Header = ({className, largeAvatar}) => (
@@ -8,9 +9,10 @@ const Header = ({className, largeAvatar}) => (
     <div className="widthContainer">
       <Avatar className="avatar" large={largeAvatar} />
       {/* TODO: ADD MENU HERE */}
+      <ThemeToggle />
     </div>
   </header>
-);
+)
 
 
-export default Header;
+export default Header

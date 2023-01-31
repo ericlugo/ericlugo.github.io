@@ -1,4 +1,7 @@
-import React from "react";
+import React from "react"
+
+import '../sass/components/Avatar.scss'
+
 
 const Icon = () => (
   <svg width="100%" height="100%" viewBox="0 0 556 735" fill="none">
@@ -57,12 +60,13 @@ const Icon = () => (
       />
     </g>
   </svg>
-);
+)
 
 const Avatar = ({ className, large=false }) => (
-  <div id="Avatar" className={className} aria-label="small svg avatar of eric lugo" data-large={large}>
+  <div id="avatar" className={className} aria-label="small svg avatar of eric lugo" data-large={large}>
     <Icon />
   </div>
-);
+)
 
-export default Avatar;
+
+export default Avatar
