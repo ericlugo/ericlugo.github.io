@@ -10,12 +10,17 @@ export const onClick = () => {
 }
 
 export const getColorPreference = () => {
-  if (localStorage.getItem(storageKey))
-    return localStorage.getItem(storageKey)
-  else
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light'
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem(storageKey))
+      return localStorage.getItem(storageKey)
+    else
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+  }
+  else {
+    return false
+  }
 }
 
 export const setPreference = () => {

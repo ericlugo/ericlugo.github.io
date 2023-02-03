@@ -4,7 +4,7 @@
   display: inline-block;
   position: relative;
   border-radius: 50%;
-  border: var(--borderWidth) solid var(--accentTranslucentDark);
+  border: var(--borderWidth) solid var(--accent1Translucent);
   padding: 0.5rem 0 .2rem;
   height: 4rem;
   width: 4rem;
@@ -19,11 +19,11 @@
     margin: 0 auto;
 
     .background-one {
-      fill: var(--accentDark);
+      fill: var(--accent1);
     }
 
     .background-two {
-      fill: var(--accentLight);
+      fill: var(--accent2);
     }
 
     .main,

@@ -16,7 +16,7 @@ const NavLink = ({item, isCurrentPath}) => {
 const MainNav = ({className}) => (
   <Location>
     {({ location: { pathname: currentPath } }) => (
-      <div className={`${className} links`}>
+      <div className={`nav${className ? ' '+className : ''}`}>
         {navLinks.map((item, index) => {
           let isCurrentPath = currentPath===item.path
           return <NavLink key={index} item={item} isCurrentPath={isCurrentPath} />

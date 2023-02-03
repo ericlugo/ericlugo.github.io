@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
 /* == Generic Styles ======================================================= */
 
 body {
@@ -58,10 +62,10 @@ h6 {
 a {
   font-family: var(--codeFontFamily);
   text-decoration: none;
-  color: var(--accentDark);
+  color: var(--accent1);
 
-  &:hover {
-    color: var(--accentLight);
+  &:is(:hover, :active, :focus-visible) {
+    color: var(--accent1-hover);
   }
 }
 
@@ -99,13 +103,21 @@ small {
 .widthContainer {
   margin: 0 auto;
   width: 100%;
-  max-width: var(--breakpoint_md);
+  max-width: map.get($breakpoint, "md");
 
-  @media (max-width: var(--breakpoint_md)) {
+  @media (max-width: map.get($breakpoint, "md")) {
     padding: 0 0.5rem;
   }
 }
 
 .siteHeader .widthContainer {
   padding: var(--mainPadding) 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: map.get($breakpoint, "md")) {
+    padding: var(--mainPadding) 0.5rem;
+  }
 }

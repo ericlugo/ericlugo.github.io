@@ -5,11 +5,11 @@ import Header from "../components/Header";
 import MainNav from "../components/Nav";
 import SocialNav from "../components/SocialNav";
 
-import '../sass/layouts/home.scss';
+import '../sass/layouts/Home.scss';
 
 
 const Layout = ({children}) => (
-  <div id="layoutContainer">
+  <div id="layoutContainer" className="home">
     <Header className="siteHeader" largeAvatar={true} />
     <main>
       <section className="widthContainer">
@@ -19,7 +19,7 @@ const Layout = ({children}) => (
         <p>
           I like to make stuff, and I'm working to get better at explaining things to other people!
         </p>
-        <MainNav className="nav mainNav" />
+        <MainNav />
         <p>
           If you want to see some of the stuff I've made, you can go to <Link to="/projects/">Projects</Link>.
           Want to read some of the things I've tried explaining? Click on <Link to="/blog/">Blog</Link>.
@@ -30,7 +30,7 @@ const Layout = ({children}) => (
         </p>
       </section>
     </main>
-    <SocialNav className="socialNav homeFooter" />
+    <SocialNav className="homeFooter" />
   </div>
 );
 

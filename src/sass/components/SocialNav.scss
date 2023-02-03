@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
 /* == Social Links ========================================================= */
 
 .socialNav {
@@ -6,32 +10,26 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    color: var(--accentDark);
   
-    &:hover,
-    &:active {
-      color: var(--accentLight);
-    }
-  
-    svg {
+    & > svg {
       font-size: calc(var(--fontBase) * 1.1);
       stroke-width: 2px;
     }
   
-    .name {
+    & > .name {
       margin-right: 0.5em;
     }
   
-    @media (min-width: var(--breakpoint_xs)) {
+    @media (min-width: map.get($breakpoint, "xs")) {
       display: block;
       text-align: center;
       
-      svg {
+      & > svg {
         font-size: var(--h3Size);
         stroke-width: 1px;
       }
       
-      .name {
+      & > .name {
         margin: 0;
         display: none;
       }

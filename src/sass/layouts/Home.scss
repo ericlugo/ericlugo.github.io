@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
 /* == Glitch Animation Keyframes =========================================== */
 
 @keyframes glitch1 {
@@ -71,8 +75,8 @@
 
   &::before {
     text-shadow:
-      0.1rem 0 0 var(--accentDark),
-      -0.1rem 0 0 var(--accentDark);
+      0.1rem 0 0 var(--accent1),
+      -0.1rem 0 0 var(--accent1);
     color: var(--foreground);
     opacity: .65;
     animation: glitch1 10s infinite linear alternate-reverse;
@@ -80,10 +84,64 @@
 
   &:after {
     text-shadow:
-      0.1rem 0 0 var(--accentTranslucentDark),
-      -0.1rem 0 0 var(--accentTranslucentDark);
+      0.1rem 0 0 var(--accent1Translucent),
+      -0.1rem 0 0 var(--accent1Translucent);
     color: var(--foreground);
     opacity: .65;
     animation: glitch2 7.5s infinite linear alternate-reverse;
+  }
+}
+
+
+/* == Main Container Styling =============================================== */
+#layoutContainer > main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+
+/* == Home ONLY Styles ===================================================== */
+.nav {
+  a {
+    font-family: var(--mainFontFamily);
+    font-size: var(--h3Size);
+    line-height: 2.25rem;
+    text-transform: capitalize;
+    font-weight: 300;
+
+    .arrow {
+      font-family: var(--codeFontFamily);
+    }
+  }
+
+  a[href="/"] {
+    display: none;
+  }
+}
+
+
+.socialNav {
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  width: 100%;
+  max-width: map.get($breakpoint, md);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  a {
+    & > svg {
+      font-size: var(--h2Size);
+      stroke-width: 1px;
+    }
+
+    & > .name {
+      display: none;
+    }
+  }
+
+  @media (max-width: map.get($breakpoint, "xs")) {
+    padding: 0.5rem;
   }
 }
