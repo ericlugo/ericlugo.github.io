@@ -6,11 +6,18 @@
 
 body {
   background-color: var(--background);
-  transition: background-color .15s ease-in, color .15s ease-in;
 }
 
-a {
-  transition: color .15s ease-in;
+[data-loading="complete"] body {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: background-color .15s ease-in, color .15s ease-in;
+  }
+}
+
+[data-loading="complete"] a {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color .15s ease-in;
+  }
 }
 
 
@@ -94,10 +101,16 @@ small {
 
 #layoutContainer {
   min-height: 100vh;
+  min-height: 100dvh;
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  transition: color .15s ease-in, background-color .15s ease-in;
+}
+
+[data-loading="complete"] #layoutContainer {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color .15s ease-in, background-color .15s ease-in;
+  }
 }
 
 .widthContainer {

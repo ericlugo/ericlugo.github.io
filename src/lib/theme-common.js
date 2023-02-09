@@ -40,3 +40,8 @@ export const reflectPreference = () => {
     .querySelector('#theme-toggle')
     ?.setAttribute('aria-label', theme.value)    
 }
+
+export const enableTimings = () => {
+  document.firstElementChild
+    .setAttribute('data-loading', 'complete')
+}

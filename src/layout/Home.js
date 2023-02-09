@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from "react"
+import { Link } from "gatsby"
 
-import Header from "../components/Header";
-import MainNav from "../components/Nav";
-import SocialNav from "../components/SocialNav";
+import Header from "../components/Header"
+import MainNav from "../components/Nav"
+import SocialNav from "../components/SocialNav"
 
-import '../sass/layouts/Home.scss';
+import '../sass/layouts/Home.scss'
 
 
 const Layout = ({children}) => (
@@ -32,7 +32,7 @@ const Layout = ({children}) => (
     </main>
     <SocialNav className="homeFooter" />
   </div>
-);
+)
 
 
-export default Layout;
+export default Layout
