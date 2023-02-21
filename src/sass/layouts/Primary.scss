@@ -1,0 +1,84 @@
+// @use "sass:map";
+// @use "../foundation/abstracts" as *;
+
+
+/* == Primary ONLY Styles ===================================================== */
+
+#primary {
+  .about {
+    :where(p, h1) {
+      margin: var(--mainMargin) 0;
+    }
+    
+    :where(.mainHeader) {
+      font-size: var(--h2Size);
+      line-height: var(--h2LineHeight);
+    }
+
+    :where(.subHeader) {
+      font-size: var(--h4Size);
+      line-height: var(--h4LineHeight);
+    }
+
+    :where(.subText) {
+      font-size: var(--h6Size);
+      line-height: var(--h6LineHeight);
+    }
+  } 
+
+  .previewList {
+    padding: var(--mainPadding) 0;
+    
+    .previewCard {
+      display: block;
+      position: relative;
+      background-color: var(--card);
+      padding: var(--mainPadding);
+      border-radius: var(--borderRadius);
+      transition:
+        color .3s ease-in,
+        background-color .3s ease-in;
+      
+      &:nth-last-of-type() {
+        margin-bottom: var(--mainMargin);
+      }
+      
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        background-color: var(--card);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--borderRadius);
+        opacity: 0;
+        transition: opacity .3s ease-in;
+        filter: drop-shadow(1px 2px 3px var(--accent1Translucent));
+      }
+
+      &:is(:hover, :active, :focus-visible) {
+        background-color: var(--card-hover);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      p {
+        margin: .25rem 0;
+      }
+      
+      .mainHeader {
+        font-size: var(--h3Size);
+        line-height: var(--h3LineHeight);
+      }
+
+      .subHeader {
+        font-size: var(--h5Size);
+        line-height: var(--h5LineHeight);
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ const socialLinks = [
     url: "https://github.com/",
     icon: <FiGithub />,
   },
-];
+]
 
 
-export default socialLinks;
+export default socialLinks

@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
+/* == Header =============================================================== */
+
+#siteHeader .widthContainer {
+  padding: var(--mainPadding) 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: map.get($breakpoint, "md")) {
+    padding: var(--mainPadding) 0.5rem;
+  }
+}

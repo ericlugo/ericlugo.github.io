@@ -9,11 +9,13 @@
   a {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   
     & > svg {
       font-size: calc(var(--fontBase) * 1.1);
       stroke-width: 2px;
+      min-width: var(--h5Size);
+      aspect-ratio: 1 / 1;
     }
   
     & > .name {

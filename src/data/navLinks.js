@@ -19,7 +19,7 @@ const navLinks = [
     path: "/about/",
     label: "about me",
   },
-];
+]
 
 
-export default navLinks;
+export default navLinks

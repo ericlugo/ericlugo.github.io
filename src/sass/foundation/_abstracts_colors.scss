@@ -1,6 +1,7 @@
 $color-default: (
   "background": rgba(239, 241, 243, 1.00),
   "card": rgba(252, 252, 252, 1.00),
+  "card-hover": rgba(255, 254, 254, 1.00),
   "foreground": rgba(47, 50, 58, 1.00),
   "accent1": rgba(203, 59, 253, 1.00),
   "accent1-hover": rgba(158, 16, 208, 1.00),
@@ -10,12 +11,14 @@ $color-default: (
   "accent2-hover": rgba(218, 0, 122, 1.00),
   "accent2Translucent": rgba(253, 25, 153, 0.80),
   "accent2Translucent-hover": rgba(218, 0, 122, 0.80),
+  "transparent": rgba(0, 0, 0, 0),
 );
 
 
 $color-dark: (
   "background": rgba(47, 50, 58, 1.00),
   "card": rgba(67, 80, 88, 1.00),
+  "card-hover": rgba(73, 84, 92, 1.00),
   "foreground": rgba(239, 241, 243, 1.00),
   "accent1": rgba(89, 229, 229, 1.00),
   "accent1-hover": rgba(142, 249, 243, 1.00),

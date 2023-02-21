@@ -30,42 +30,6 @@ body {
   color: var(--foreground);
 }
 
-h1 {
-  font-family: var(--mainFontFamily);
-  font-size: var(--h1Size);
-  line-height: var(--h1LineHeight);
-}
-
-h2 {
-  font-family: var(--mainFontFamily);
-  font-size: var(--h2Size);
-  line-height: var(--h2LineHeight);
-}
-
-h3 {
-  font-family: var(--mainFontFamily);
-  font-size: var(--h3Size);
-  line-height: var(--h3LineHeight);
-}
-
-h4 {
-  font-family: var(--mainFontFamily);
-  font-size: var(--h4Size);
-  line-height: var(--h4LineHeight);
-}
-
-h5 {
-  font-family: var(--mainFontFamily);
-  font-size: var(--h5Size);
-  line-height: var(--h5LineHeight);
-}
-
-h6 {
-  font-family: var(--mainFontFamily);
-  font-size: var(--h6Size);
-  line-height: var(--h6LineHeight);
-}
-
 a {
   font-family: var(--codeFontFamily);
   text-decoration: none;
@@ -97,9 +61,14 @@ small {
   line-height: var(--h6LineHeight);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mainFontFamily);
+}
+
+
 /* == Generic Containers =================================================== */
 
-#layoutContainer {
+.layoutContainer {
   min-height: 100vh;
   min-height: 100dvh;
   height: 100%;
@@ -107,7 +76,7 @@ small {
   grid-template-rows: auto 1fr auto;
 }
 
-[data-loading="complete"] #layoutContainer {
+[data-loading="complete"] .layoutContainer {
   @media (prefers-reduced-motion: no-preference) {
     transition: color .15s ease-in, background-color .15s ease-in;
   }
@@ -120,17 +89,5 @@ small {
 
   @media (max-width: map.get($breakpoint, "md")) {
     padding: 0 0.5rem;
-  }
-}
-
-.siteHeader .widthContainer {
-  padding: var(--mainPadding) 0;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: map.get($breakpoint, "md")) {
-    padding: var(--mainPadding) 0.5rem;
   }
 }

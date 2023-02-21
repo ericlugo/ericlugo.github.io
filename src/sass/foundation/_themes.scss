@@ -37,6 +37,7 @@
   /* Default Palette */
   --background:               #{ map.get($color-default, "background") };
   --card:                     #{ map.get($color-default, "card") };
+  --card-hover:               #{ map.get($color-default, "card-hover") };
   --foreground:               #{ map.get($color-default, "foreground") };
   --accent1:                  #{ map.get($color-default, "accent1") };
   --accent1-hover:            #{ map.get($color-default, "accent1-hover") };
@@ -46,6 +47,7 @@
   --accent2-hover:            #{ map.get($color-default, "accent2-hover") };
   --accent2Translucent:       #{ map.get($color-default, "accent2Translucent") };
   --accent2Translucent-hover: #{ map.get($color-default, "accent2Translucent-hover") };
+  --transparent:              #{ map.get($color-default, "transparent") };
 }
 
 [data-theme="dark"]:root {
@@ -53,6 +55,7 @@
   /* Darkmode Palette */
   --background:               #{ map.get($color-dark, "background") };
   --card:                     #{ map.get($color-dark, "card") };
+  --card-hover:               #{ map.get($color-dark, "card-hover") };
   --foreground:               #{ map.get($color-dark, "foreground") };
   --accent1:                  #{ map.get($color-dark, "accent1") };
   --accent1-hover:            #{ map.get($color-dark, "accent1-hover") };

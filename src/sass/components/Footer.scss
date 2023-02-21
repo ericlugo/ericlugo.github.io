@@ -1,0 +1,94 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
+/* == Footer =============================================================== */
+
+#siteFooter {
+  padding: var(--mainPadding) 0;
+  color: var(--foreground);
+
+  .widthContainer {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+      "nav  socialNav"
+      "copy copy";
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
+  .socialNav {
+    grid-area: socialNav;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .copy {
+    grid-area: copy;
+
+    .credit {
+      text-align: center;
+      line-height: var(--baseLineHeight);
+
+      a {
+        
+        span {
+          display: inline-flex;
+          align-items: baseline;
+          text-align: center;
+        }
+      }
+    }
+
+    .copyright {
+      grid-area: copy;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+      text-align: center;
+      font-size: var(--h6Size);
+      line-height: var(--h6LineHeight);
+    }
+  }
+
+  @media (min-width: map.get($breakpoint, "xs")) {
+    .widthContainer {
+      grid-template-areas: 
+        "nav socialNav copy";
+      grid-template-columns: 2fr auto 2fr;
+    }
+
+    .socialNav {
+      display: grid;
+      grid-template-columns: repeat(2, var(--h2Size));
+      grid-template-rows: repeat(2, var(--h2Size));
+      align-items: center;
+      justify-content: center;
+
+      a {
+        margin: auto;
+      }
+    }
+
+    .copy {
+      .credit {
+        text-align: right;
+
+        a {
+          display: block;
+        }
+      }
+
+      .copyright {
+        margin-left: 1rem;
+        margin-top: 0.5rem;
+        text-align: right;
+      }
+    }
+  }
+}
