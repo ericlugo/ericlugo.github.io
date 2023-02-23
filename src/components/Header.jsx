@@ -1,17 +1,20 @@
 import React from "react"
 
 import Avatar from "./Avatar"
+import Nav from "./Nav"
 import ThemeToggle from "./ThemeToggle"
 
 import "../sass/components/Header.scss"
 
 
-const Header = ({className, largeAvatar}) => (
+const Header = ({className, largeAvatar, withNav}) => (
   <header id="siteHeader" className={className}>
     <div className="widthContainer">
       <Avatar className="avatar" large={largeAvatar} />
-      {/* TODO: ADD MENU HERE */}
-      <ThemeToggle />
+      <section className="headerControls">
+        {!!withNav && <Nav/>}
+        <ThemeToggle />
+      </section>
     </div>
   </header>
 )

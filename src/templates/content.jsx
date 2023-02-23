@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 import PrimaryLayout from "../layout/Primary"
 
 const shortcodes = { Link }
+const regex = /(^.*\/){1}/g
 
 
 export const query = graphql`
@@ -13,6 +14,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        slug
       }
     }
   }
@@ -22,6 +24,7 @@ export const query = graphql`
 const ContentTemplate = ({ data, children }) => (
   <PrimaryLayout className="content">
     <h1 className="mainHeader">{data.mdx.frontmatter.title}</h1>
+    <Link to={"/"+data.mdx.frontmatter.slug.match(regex)}>Go to Directory</Link>
     <MDXProvider components={shortcodes}>
       {children}
     </MDXProvider>

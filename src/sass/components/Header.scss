@@ -4,14 +4,38 @@
 
 /* == Header =============================================================== */
 
-#siteHeader .widthContainer {
-  padding: var(--mainPadding) 0;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
+#siteHeader {
+  .widthContainer {
+    padding: var(--mainPadding) 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  
+    @media (max-width: map.get($breakpoint, "md")) {
+      padding: var(--mainPadding) 0.5rem;
+    }
+  
+    .nav {
+      display: none;
+    }
 
-  @media (max-width: map.get($breakpoint, "md")) {
-    padding: var(--mainPadding) 0.5rem;
+    @media (min-width: map.get($breakpoint, "xs")) {
+      .nav {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: calc(var(--mainPadding) * 2);
+
+        .arrow {
+          display: none;
+        }
+      }
+
+      .headerControls {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: calc(var(--mainPadding) * 2);
+      }
+    }
   }
 }

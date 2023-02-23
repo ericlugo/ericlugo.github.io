@@ -18,6 +18,12 @@ $fontSize: (
 );
 
 
+$fontWeight: (
+  "regular": 400,
+  "heavy": 700,
+);
+
+
 $lineHeightModifier: 1.1;
 $lineHeight: (
   "base": 1.45rem, //base font will have the greatest spacing but all headings will also have slightly expanded line heights

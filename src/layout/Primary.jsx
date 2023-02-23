@@ -6,9 +6,9 @@ import Footer from "../components/Footer"
 import '../sass/layouts/Primary.scss'
 
 
-const Layout = ({className, children}) => (
+const Layout = ({className, children, withNav=false}) => (
   <div id="primary" className="layoutContainer">
-    <Header />
+    <Header withNav={withNav}/>
     <main className={className}>
       <section className="widthContainer">
         {children}

@@ -25,7 +25,7 @@ export const query = graphql`
 
 const AboutPage = ({ data }) => {
   const nodes = data.allMdx.nodes.map(node => (
-    <Link className="previewCard" to={'../'+node.frontmatter.slug} key={node.id}>
+    <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
       <p className="mainHeader">{node.frontmatter.title}</p>
       <p className="subHeader">{node.frontmatter.description}</p>
       <p className="subText">Written On: {node.frontmatter.created_date}</p>
@@ -72,4 +72,4 @@ const AboutPage = ({ data }) => {
 export default AboutPage
 
 
-export const Head = () => <title>About Page</title>
+export const Head = () => <title>About Me</title>

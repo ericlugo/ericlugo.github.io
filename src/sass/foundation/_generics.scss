@@ -26,7 +26,7 @@ body {
 body {
   font-family: var(--mainFontFamily);
   font-size: var(--fontBase);
-  font-weight: 400;
+  font-weight: var(--regular);
   color: var(--foreground);
 }
 
@@ -49,7 +49,7 @@ em {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: var(--heavy);
 }
 
 code {

@@ -19,6 +19,10 @@
   --h5Size:                   #{ map.get($fontSize, "h5") };
   --h6Size:                   #{ map.get($fontSize, "h6") };
 
+  /* Typography - Font Weights */
+  --regular:                  #{ map.get($fontWeight, "regular") };
+  --heavy:                    #{ map.get($fontWeight, "heavy") };
+
   /* Typography - Line Heights */
   --baseLineHeight:           #{ map.get($lineHeight, "base") };
   --h1LineHeight:             #{ map.get($lineHeight, "h1") };

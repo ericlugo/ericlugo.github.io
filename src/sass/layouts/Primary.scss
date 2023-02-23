@@ -5,18 +5,24 @@
 /* == Primary ONLY Styles ===================================================== */
 
 #primary {
-  .about {
-    :where(p, h1) {
+  :where(.about, .random) {
+    ul {
+      padding-left: var(--mainPadding);
+    }
+
+    :where(p, ul, h1) {
       margin: var(--mainMargin) 0;
     }
     
     :where(.mainHeader) {
       font-size: var(--h2Size);
+      font-weight: var(--regular);
       line-height: var(--h2LineHeight);
     }
 
     :where(.subHeader) {
       font-size: var(--h4Size);
+      font-weight: var(--regular);
       line-height: var(--h4LineHeight);
     }
 
