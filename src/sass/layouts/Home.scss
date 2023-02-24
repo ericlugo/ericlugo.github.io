@@ -9,6 +9,10 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+
+    p {
+      margin: 0;
+    }
   
     .homeHeader {
       font-size: var(--h1Size);

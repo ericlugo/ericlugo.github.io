@@ -65,10 +65,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--mainFontFamily);
 }
 
+ul, ol {
+  padding-left: var(--mainPadding);
+}
+
+:where(p, ul, ol, h1, h2, h3, h4, h5, h6) {
+  margin: var(--mainMargin) 0;
+}
+
 
 /* == Generic Containers =================================================== */
 
-.layoutContainer {
+:where(.layoutContainer) {
   min-height: 100vh;
   min-height: 100dvh;
   height: 100%;
@@ -76,13 +84,13 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-rows: auto 1fr auto;
 }
 
-[data-loading="complete"] .layoutContainer {
+[data-loading="complete"] :where(.layoutContainer) {
   @media (prefers-reduced-motion: no-preference) {
     transition: color .15s ease-in, background-color .15s ease-in;
   }
 }
 
-.widthContainer {
+:where(.widthContainer) {
   margin: 0 auto;
   width: 100%;
   max-width: map.get($breakpoint, "md");
@@ -90,4 +98,43 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: map.get($breakpoint, "md")) {
     padding: 0 0.5rem;
   }
+}
+
+
+/* == Special-Use Classes ================================================== */
+
+:where(.mainHeader) {
+  font-size: var(--h2Size);
+  font-weight: var(--regular);
+  line-height: var(--h2LineHeight);
+}
+
+:where(.subHeader) {
+  font-size: var(--h4Size);
+  font-weight: var(--regular);
+  line-height: var(--h4LineHeight);
+}
+
+:where(.subText) {
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
+}
+
+:where(.label) {
+  display: inline-block;
+  background-color: var(--card);
+  border-radius: var(--borderRadius);
+  padding: calc(var(--mainPadding) / 4) calc(var(--mainPadding) / 2);
+  font-family: var(--codeFontFamily);
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
+}
+
+:where(.tldr) {
+  display: inline-block;
+  background-color: var(--card);
+  padding: var(--mainPadding);
+  font-family: var(--codeFontFamily);
+  font-size: var(--h6Size);
+  line-height: var(--h6LineHeight);
 }

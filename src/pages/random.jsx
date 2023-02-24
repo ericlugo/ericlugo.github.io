@@ -7,9 +7,11 @@ import PrimaryLayout from "../layout/Primary"
 
 export const query = graphql`
   query {
-    allMdx(filter: {frontmatter: {slug: {glob: "random/*"}}}) {
+    allMdx(
+      filter: {frontmatter: {slug: {glob: "random/*"}}}
+      sort: {frontmatter: {edited_date: DESC}}
+    ) {
       nodes {
-        id
         frontmatter {
           slug
           created_date(formatString: "YYYY-MM-DD")
@@ -19,13 +21,14 @@ export const query = graphql`
           category
         }
         excerpt
+        id
       }
     }
   }
 `
 
 
-const RandomPage = ({ data }) => {
+const RandomListPage = ({ data }) => {
   const nodes = data.allMdx.nodes.map(node => (
     <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
       <header className="previewHeader">
@@ -45,7 +48,7 @@ const RandomPage = ({ data }) => {
 
   return (
     <PrimaryLayout className="random" withNav={true}>
-      <h2 className="mainHeader">Welcome!</h2>
+      <h1 className="mainHeader">My Random Thoughts</h1>
       <section>
         <p>
           Well, you ended up on this random corner of my site. Thanks for your curiosity. This area is just for me to post more personal items. I don't want to muddy the waters of my main blog so I prefer the idea of separating these items out into a sort of sub-area. Here you will find the following:
@@ -73,7 +76,7 @@ const RandomPage = ({ data }) => {
 }
 
 
-export default RandomPage
+export default RandomListPage
 
 
 export const Head = () => <title>My Random Thoughts</title>

@@ -5,35 +5,14 @@
 /* == Primary ONLY Styles ===================================================== */
 
 #primary {
-  :where(.about, .random) {
-    ul {
-      padding-left: var(--mainPadding);
+  .projects {
+    .tldr {
+      margin-top: 0;
     }
-
-    :where(p, ul, h1) {
-      margin: var(--mainMargin) 0;
-    }
-    
-    :where(.mainHeader) {
-      font-size: var(--h2Size);
-      font-weight: var(--regular);
-      line-height: var(--h2LineHeight);
-    }
-
-    :where(.subHeader) {
-      font-size: var(--h4Size);
-      font-weight: var(--regular);
-      line-height: var(--h4LineHeight);
-    }
-
-    :where(.subText) {
-      font-size: var(--h6Size);
-      line-height: var(--h6LineHeight);
-    }
-  } 
+  }
 
   .previewList {
-    padding: var(--mainPadding) 0;
+    margin: var(--mainMargin) 0;
     
     .previewCard {
       display: block;
@@ -44,8 +23,8 @@
       transition:
         color .3s ease-in,
         background-color .3s ease-in;
-      
-      &:nth-last-of-type() {
+
+      &:not(:last-child) {
         margin-bottom: var(--mainMargin);
       }
       

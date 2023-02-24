@@ -22,7 +22,7 @@ export const query = graphql`
 
 
 const ContentTemplate = ({ data, children }) => (
-  <PrimaryLayout className="content">
+  <PrimaryLayout className="content" withNav={true}>
     <h1 className="mainHeader">{data.mdx.frontmatter.title}</h1>
     <Link to={"/"+data.mdx.frontmatter.slug.match(regex)}>Go to Directory</Link>
     <MDXProvider components={shortcodes}>
