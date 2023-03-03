@@ -9,13 +9,12 @@ export const query = graphql`
   query {
     projects: allMdx(
       limit: 3,
-      filter: {frontmatter: {slug: {glob: "projects/*"}, category: {eq: "Project"}}}
+      filter: {frontmatter: {slug: {glob: "projects/*"}, category: {eq: "Project"}}},
       sort: {frontmatter: {edited_date: DESC}}
     ) {
       nodes {
         frontmatter {
           slug
-          created_date(formatString: "YYYY-MM-DD")
           description
           title
           edited_date(formatString: "YYYY-MM-DD")
@@ -26,13 +25,12 @@ export const query = graphql`
       }
     }
     whiteboard: allMdx(
-      filter: {frontmatter: {slug: {glob: "projects/*"}, category: {nin: "Project"}}}
+      filter: {frontmatter: {slug: {glob: "projects/*"}, category: {nin: "Project"}}},
       sort: {frontmatter: {edited_date: DESC}}
     ) {
       nodes {
         frontmatter {
           slug
-          created_date(formatString: "YYYY-MM-DD")
           description
           title
           edited_date(formatString: "YYYY-MM-DD")
@@ -58,7 +56,6 @@ const ProjectListPage = ({ data }) => {
       </section>
       <footer className="previewFooter">
         <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Written: {node.frontmatter.created_date}</p>
         <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
       </footer>
     </Link>
@@ -74,7 +71,6 @@ const ProjectListPage = ({ data }) => {
       </section>
       <footer className="previewFooter">
         <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Written: {node.frontmatter.created_date}</p>
         <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
       </footer>
     </Link>

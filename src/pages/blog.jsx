@@ -8,13 +8,12 @@ import PrimaryLayout from "../layout/Primary"
 export const query = graphql`
   query {
     allMdx(
-      filter: {frontmatter: {slug: {glob: "blog/*"}}}
+      filter: {frontmatter: {slug: {glob: "blog/*"}}},
       sort: {frontmatter: {edited_date: DESC}}
     ) {
       nodes {
         frontmatter {
           slug
-          created_date(formatString: "YYYY-MM-DD")
           description
           title
           edited_date(formatString: "YYYY-MM-DD")
@@ -40,7 +39,6 @@ const BlogListPage = ({ data }) => {
       </section>
       <footer className="previewFooter">
         <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Written: {node.frontmatter.created_date}</p>
         <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
       </footer>
     </Link>

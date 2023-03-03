@@ -7,14 +7,18 @@ import PrimaryLayout from "../layout/Primary"
 
 export const query = graphql`
   query {
-    allMdx(limit: 3, filter: {frontmatter: {slug: {glob: "random/*"}}}) {
+    allMdx(
+      limit: 3,
+      filter: {frontmatter: {slug: {glob: "random/*"}}},
+      sort: {frontmatter: {edited_date: DESC}}
+    ) {
       nodes {
         id
         frontmatter {
           slug
-          created_date(formatString: "YYYY-MM-DD")
           description
           title
+          edited_date(formatString: "YYYY-MM-DD")
         }
         excerpt
       }
@@ -28,7 +32,7 @@ const AboutPage = ({ data }) => {
     <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
       <p className="mainHeader">{node.frontmatter.title}</p>
       <p className="subHeader">{node.frontmatter.description}</p>
-      <p className="subText">Written On: {node.frontmatter.created_date}</p>
+      <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
       <p>{node.excerpt}</p>
     </Link>
   ))

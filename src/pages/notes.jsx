@@ -8,13 +8,12 @@ import PrimaryLayout from "../layout/Primary"
 export const query = graphql`
   query {
     allMdx(
-      filter: {frontmatter: {slug: {glob: "notes/*"}}}
+      filter: {frontmatter: {slug: {glob: "notes/*"}}},
       sort: {frontmatter: {edited_date: DESC}}
     ) {
       nodes {
         frontmatter {
           slug
-          created_date(formatString: "YYYY-MM-DD")
           description
           title
           edited_date(formatString: "YYYY-MM-DD")
