@@ -8,7 +8,11 @@ import ExternalLink from "../components/ExternalLink"
 import CitationCard from "../components/CitationCard"
 
 
-const shortcodes = { Link, ExternalLink, CitationCard }
+const shortcodes = {
+  Link,
+  ExternalLink,
+  CitationCard,
+}
 const regex = /(^.*\/){1}/g
 const regexName = /(^.*(?=\/))/g
 
