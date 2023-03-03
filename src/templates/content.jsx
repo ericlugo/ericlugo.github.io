@@ -4,9 +4,13 @@ import { MDXProvider } from "@mdx-js/react"
 import { Link } from "gatsby"
 
 import PrimaryLayout from "../layout/Primary"
+import ExternalLink from "../components/ExternalLink"
+import CitationCard from "../components/CitationCard"
 
-const shortcodes = { Link }
+
+const shortcodes = { Link, ExternalLink, CitationCard }
 const regex = /(^.*\/){1}/g
+const regexName = /(^.*(?=\/))/g
 
 
 export const query = graphql`
@@ -15,6 +19,8 @@ export const query = graphql`
       frontmatter {
         title
         slug
+        edited_date(formatString: "YYYY-MM-DD")
+        category
       }
     }
   }
@@ -23,11 +29,16 @@ export const query = graphql`
 
 const ContentTemplate = ({ data, children }) => (
   <PrimaryLayout className="content" withNav={true}>
-    <h1 className="mainHeader">{data.mdx.frontmatter.title}</h1>
-    <Link to={"/"+data.mdx.frontmatter.slug.match(regex)}>Go to Directory</Link>
+    <header className="contentHeader">
+      <h1 className="mainHeader">{data.mdx.frontmatter.title}</h1>
+      <p className="subText">Category: {data.mdx.frontmatter.category}</p>
+      <p className="subText">Last Edited: {data.mdx.frontmatter.edited_date}</p>
+    </header>
+    <Link className="directoryLink" to={"/"+data.mdx.frontmatter.slug.match(regex)}>&lt; Go to {data.mdx.frontmatter.slug.match(regexName)} Directory</Link>
     <MDXProvider components={shortcodes}>
       {children}
     </MDXProvider>
+    <Link className="directoryLink" to={"/"+data.mdx.frontmatter.slug.match(regex)}>&lt; Go to {data.mdx.frontmatter.slug.match(regexName)} Directory</Link>
   </PrimaryLayout>
 )
 

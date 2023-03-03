@@ -5,22 +5,22 @@ import { FiCodepen, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi"
 const socialLinks = [
   {
     name: "Twitter",
-    url: "https://twitter.com/",
+    url: "https://twitter.com/ericthelugo",
     icon: <FiTwitter />,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/ericlugo-dev/",
     icon: <FiLinkedin />,
   },
   {
     name: "CodePen",
-    url: "https://codepen.io/",
+    url: "https://codepen.io/ericthelugo",
     icon: <FiCodepen />,
   },
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/ericlugo",
     icon: <FiGithub />,
   },
 ]

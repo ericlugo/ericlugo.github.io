@@ -8,6 +8,7 @@ import PrimaryLayout from "../layout/Primary"
 export const query = graphql`
   query {
     projects: allMdx(
+      limit: 3,
       filter: {frontmatter: {slug: {glob: "projects/*"}, category: {eq: "Project"}}}
       sort: {frontmatter: {edited_date: DESC}}
     ) {

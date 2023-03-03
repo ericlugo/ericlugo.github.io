@@ -15,7 +15,7 @@ const Footer = ({ className }) => (
       <div className="copy">
         <div className="credit">
           Icons courtesy of:{" "}
-          <a href="https://feathericons.com/"><span><FiFeather />FeatherIcons</span></a>
+          <a href="https://feathericons.com/" target="_blank" rel="noreferrer noopener"><span><FiFeather />FeatherIcons</span></a>
         </div>
         <div className="copyright">
           copyright &copy; Eric Lugo {new Date().getFullYear()}

@@ -5,6 +5,22 @@
 /* == Primary ONLY Styles ===================================================== */
 
 #primary {
+  :where(.about, .blog, .notes, .projects, .random) {
+    .widthContainer {
+      padding: 0 0 var(--mainPadding) 0;
+      border-top: 1px solid var(--card);
+      border-bottom: 1px solid var(--card);
+    }
+  }
+
+  :where(.content) {
+    .widthContainer {
+      padding: var(--mainPadding) 0;
+      border-top: 1px solid var(--card);
+      border-bottom: 1px solid var(--card);
+    }
+  }
+
   .projects {
     .tldr {
       margin-top: 0;
@@ -64,6 +80,85 @@
         font-size: var(--h5Size);
         line-height: var(--h5LineHeight);
       }
+    }
+  }
+
+  .content {
+    h2 {
+      font-size: var(--h4Size);
+      font-weight: var(--regular);
+      line-height: var(--h4LineHeight);
+    }
+    
+    h3 {
+      font-size: var(--h5Size);
+      font-weight: var(--regular);
+      line-height: var(--h5LineHeight);
+    }
+
+    hr {
+      border-top: 1px solid var(--card);
+      border-bottom: 0;
+    }
+
+    blockquote {
+      position: relative;
+      padding: calc(var(--mainPadding) / 2) calc(var(--mainPadding) * 2.5);
+      margin: var(--mainMargin) 0;
+      border-radius: var(--borderRadius);
+      background-color: var(--card);
+
+      &::before {
+        position: absolute;
+        inset: 0 auto auto calc(var(--mainPadding) / 2);
+        content: open-quote;
+        font-size: var(--h1Size);
+      }
+
+      &::after {
+        position: absolute;
+        inset: auto calc(var(--mainPadding) / 2) 0 auto;
+        content: close-quote;
+        font-size: var(--h1Size);
+      }
+    }
+
+    ul, ol {
+      margin-left: calc(var(--mainMargin) / 2);
+    }
+
+    .contentHeader {
+      margin: 0 0 var(--mainMargin) 0;
+
+      h1, p {
+        margin: 0;
+      }
+    }
+
+    .directoryLink {
+      display: block;
+      margin: var(--mainMargin) 0;
+      text-transform: capitalize;
+
+      svg {
+        display: inline-block;
+      }
+    }
+
+    .externalLink  {
+      svg {
+        display: inline-block;
+      }
+
+      .citationNum {
+        font-size: var(--h6Size);
+        line-height: var(--h6LineHeight);
+      }
+    }
+
+    .citationCard {
+      margin: var(--mainMargin) 0;
+      padding: var(--mainPadding) 0;
     }
   }
 }

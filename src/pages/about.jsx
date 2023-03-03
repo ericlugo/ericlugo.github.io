@@ -34,7 +34,7 @@ const AboutPage = ({ data }) => {
   ))
 
   return (
-    <PrimaryLayout className="about">
+    <PrimaryLayout className="about" withNav={true}>
       <h1 className="mainHeader">Oh, well hello there!</h1>
       <section>
         <p className="subHeader">

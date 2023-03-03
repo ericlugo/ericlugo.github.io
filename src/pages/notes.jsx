@@ -40,7 +40,6 @@ const NoteListPage = ({ data }) => {
       </section>
       <footer className="previewFooter">
         <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Written: {node.frontmatter.created_date}</p>
         <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
       </footer>
     </Link>
