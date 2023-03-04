@@ -1,5 +1,7 @@
 $color-default: (
   "background": rgba(239, 241, 243, 1.00),
+  "menu-background-light": rgba(239, 241, 243, 0.10),
+  "menu-background-heavy": rgba(239, 241, 243, 0.90),
   "card": rgba(252, 252, 252, 1.00),
   "card-hover": rgba(255, 254, 254, 1.00),
   "foreground": rgba(47, 50, 58, 1.00),
@@ -17,6 +19,8 @@ $color-default: (
 
 $color-dark: (
   "background": rgba(47, 50, 58, 1.00),
+  "menu-background-light": rgba(47, 50, 58, 0.10),
+  "menu-background-heavy": rgba(47, 50, 58, 0.90),
   "card": rgba(67, 80, 88, 1.00),
   "card-hover": rgba(73, 84, 92, 1.00),
   "foreground": rgba(239, 241, 243, 1.00),

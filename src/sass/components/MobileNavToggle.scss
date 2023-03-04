@@ -1,0 +1,66 @@
+@import "https://unpkg.com/open-props/easings.min.css";
+
+
+/* == Mobile Nav Toggle ==================================================== */
+
+.mobile-nav-toggle {
+  --size: 4rem;
+  --icon-stroke: var(--accent1);
+  --cross-length: 950px;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  inline-size: var(--size);
+  block-size: var(--size);
+  aspect-ratio: 1;
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  outline-offset: 5px;
+
+  & > svg {
+    inline-size: 100%;
+    block-size: 100%;
+    stroke-linecap: round;
+    transform: translate3d(0,0,0);
+
+    path {
+      fill: none;
+      transition:
+        stroke-dashoffset .5s var(--ease-elastic-3),
+        stroke-dasharray .5s var(--ease-elastic-3);
+      stroke-width: 2.5rem;
+      stroke: var(--icon-stroke);
+      stroke-dashoffset: 0px;
+      
+      &:where(#top, #bottom) {
+        stroke-dasharray: 240px var(--cross-length);
+      }
+      &:where(#middle){
+        stroke-dasharray: 240px 240px;
+      }
+    }
+  }
+
+  @media (hover: none) {
+    --size: 48px;
+  }
+}
+
+#primary-navigation[data-visible="true"] + .mobile-nav-toggle {
+  svg {
+    path {
+      &:where(#top, #bottom) {
+        stroke-dashoffset: -650px;
+      }
+      &:where(#middle) {
+        stroke-dashoffset: -115px;
+        stroke-dasharray: 1px 220px;
+      }
+    }
+  }
+}

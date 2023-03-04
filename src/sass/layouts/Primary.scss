@@ -1,5 +1,5 @@
-// @use "sass:map";
-// @use "../foundation/abstracts" as *;
+@use "sass:map";
+@use "../foundation/abstracts" as *;
 
 
 /* == Primary ONLY Styles ===================================================== */
@@ -10,6 +10,10 @@
       padding: 0 0 var(--mainPadding) 0;
       border-top: 1px solid var(--card);
       border-bottom: 1px solid var(--card);
+
+      @media (max-width: map.get($breakpoint, "md")) {
+        padding: 0 0.5rem;
+      }
     }
   }
 
@@ -33,6 +37,7 @@
     .previewCard {
       display: block;
       position: relative;
+      isolation: isolate;
       background-color: var(--card);
       padding: var(--mainPadding);
       border-radius: var(--borderRadius);

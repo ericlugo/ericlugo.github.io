@@ -12,7 +12,7 @@ const Header = ({className, largeAvatar, withNav}) => (
     <div className="widthContainer">
       <Avatar className="avatar" large={largeAvatar} />
       <section className="headerControls">
-        {!!withNav && <Nav/>}
+        {!!withNav && <Nav isPrimary={true}/>}
         <ThemeToggle />
       </section>
     </div>

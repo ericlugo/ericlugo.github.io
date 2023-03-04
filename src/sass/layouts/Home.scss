@@ -5,6 +5,10 @@
 /* == Home ONLY Styles ===================================================== */
 
 #home {
+  .headerControls {
+    margin-top: -1rem //offset to account for larger avatar on only this layout
+  }
+
   main {
     display: flex;
     flex-flow: column nowrap;
@@ -32,7 +36,7 @@
         }
       }
     
-      a[href="/"] {
+      li[data-target="/"] {
         display: none;
       }
     }

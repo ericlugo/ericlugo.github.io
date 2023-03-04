@@ -28,6 +28,7 @@ body {
   font-size: var(--fontBase);
   font-weight: var(--regular);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 a {

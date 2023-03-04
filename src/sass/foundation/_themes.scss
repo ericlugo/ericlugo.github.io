@@ -40,6 +40,8 @@
 
   /* Default Palette */
   --background:               #{ map.get($color-default, "background") };
+  --menu-background-light:    #{ map.get($color-default, "menu-background-light") };
+  --menu-background-heavy:    #{ map.get($color-default, "menu-background-heavy") };
   --card:                     #{ map.get($color-default, "card") };
   --card-hover:               #{ map.get($color-default, "card-hover") };
   --foreground:               #{ map.get($color-default, "foreground") };
@@ -58,6 +60,8 @@
   
   /* Darkmode Palette */
   --background:               #{ map.get($color-dark, "background") };
+  --menu-background-light:    #{ map.get($color-dark, "menu-background-light") };
+  --menu-background-heavy:    #{ map.get($color-dark, "menu-background-heavy") };
   --card:                     #{ map.get($color-dark, "card") };
   --card-hover:               #{ map.get($color-dark, "card-hover") };
   --foreground:               #{ map.get($color-dark, "foreground") };
