@@ -1,3 +1,4 @@
+@use "../foundation/abstracts" as *;
 @import "https://unpkg.com/open-props/easings.min.css";
 
 
@@ -46,9 +47,7 @@
     }
   }
 
-  @media (hover: none) {
-    --size: 48px;
-  }
+  // @include no-hover-sizing(size, 48px);
 }
 
 #primary-navigation[data-visible="true"] + .mobile-nav-toggle {

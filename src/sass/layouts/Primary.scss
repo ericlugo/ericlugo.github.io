@@ -19,9 +19,13 @@
 
   :where(.content) {
     .widthContainer {
-      padding: var(--mainPadding) 0;
-      border-top: 1px solid var(--card);
+      padding: 0 0 var(--mainPadding) 0;
       border-bottom: 1px solid var(--card);
+    }
+
+    &.borderTop .widthContainer  {
+      border-top: 1px solid var(--card);
+      padding-top: calc(var(--mainPadding) * 1.5);
     }
   }
 

@@ -1,10 +1,7 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
     title: `Eric Lugo's Dev Blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://ericlugo.dev`,
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -50,4 +47,4 @@ module.exports = {
       },
     },
   ]
-};
+}

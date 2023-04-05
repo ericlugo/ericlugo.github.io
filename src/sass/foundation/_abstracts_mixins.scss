@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "abstracts_breakpoints" as *;
+
+
+@mixin no-hover-sizing($var, $val) {
+  @media (max-width: calc(map.get($breakpoint, "xs") - 1px)) {
+    --#{$var}: #{$val};
+  }
+
+  @media (hover: none) {
+    --#{$var}: #{$val};
+  }
+}

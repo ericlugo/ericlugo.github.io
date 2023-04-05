@@ -14,10 +14,12 @@
     "clean": "gatsby clean",
     "add-domain": "echo \"ericlugo.dev\" > public/CNAME",
     "deploy": "gh-pages -d public -b production",
-    "full-deploy": "npm run build && npm run add-domain && npm run deploy && npm run clean",
+    "full-deploy": "nr build && nr add-domain && nr deploy && nr clean",
     "stop-telemetry": "gatsby telemetry --disable"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.9.2",
     "@fontsource/fira-code": "^4.5.12",
     "@fontsource/ibm-plex-sans": "^4.5.13",
     "@mdx-js/react": "^2.1.5",
@@ -28,6 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
+    "react-lazy-load-image-component": "^1.5.6",
     "sass": "^1.56.1",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
