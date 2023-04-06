@@ -1,12 +1,17 @@
 ---
-title: Sample Blog Post Number Three
-slug: blog/sample-blog-post-number-three
-description: this is yet another sample blog post so that i can work on other things
-created-date: 2022-02-25
-edited-date: 2022-02-25
-category: Experiment
+title: SAMPLE RETROSPECTIVE 1
+slug: projects/sample-retrospective-1
+description: Retrospective for fictional project `Retrospective One`
+hero: portfolio/sheep
+alt: fluffy flock of sheep
+created-date: 2020-03-18
+edited-date: 2020-03-18
+category: Retrospective
+languages: JS
+libraries: React
+frameworks: Gatsby.js
+other: Sass, GraphQL
 ---
-
 
 ## H2 This is not as important
 
@@ -21,6 +26,27 @@ Spare ribs ball tip salami, pork chuck ham hock rump pig corned beef filet migno
 Bacon frankfurter shankle, swine tail short loin meatloaf filet mignon pig chislic jowl. Hamburger tri-tip venison kielbasa ground round strip steak short loin sausage meatloaf buffalo ham hock short ribs fatback capicola porchetta. Hamburger rump chuck sirloin, capicola brisket turducken buffalo pork loin pancetta cupim spare ribs flank. Pork chuck tail, beef ball tip pork belly ham hock andouille cow boudin filet mignon brisket flank meatball short loin.
 
 ## H2 Still not as important but nevertheless quite useful
+
+<ImageCard
+  src="portfolio/sheep"
+  alt="fluffy flock of sheep"
+  caption="a very fluffy flock of sheep happily blocking the road"
+  ar="1600 / 1067"
+/>
+
+<ImageCard
+  src="portfolio/shoe"
+  alt="white sneaker on blue background"
+  caption="but why is it floating in a void?"
+  ar="1860 / 1250"
+/>
+
+<ImageCard
+  src="portfolio/sky-whale"
+  alt="pixelart whale strapped to ballons"
+  caption="🎵 I believe I can fly 🎵"
+  ar="1024 / 512"
+/>
 
 Bacon ipsum dolor amet prosciutto pork leberkas tail, cow filet mignon jowl frankfurter landjaeger strip steak alcatra meatloaf corned beef fatback doner. Drumstick jerky cow kevin. Capicola fatback picanha tenderloin kielbasa meatloaf shoulder shank burgdoggen. Rump spare ribs pancetta tri-tip tongue ribeye. Chuck pancetta chicken jerky prosciutto boudin salami short ribs. Leberkas hamburger fatback cow kevin brisket.
 

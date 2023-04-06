@@ -70,7 +70,7 @@ const BlogListPage = ({ data }) => {
         </ul>
       </section>
       <section className="previewList">
-        { nodes }
+        { !!nodes ?  nodes : <>CREATE ERROR CARD HERE</> }
       </section>
     </PrimaryLayout>
   )

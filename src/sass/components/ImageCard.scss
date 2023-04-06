@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
+/* == Post Image Card Styles ================================================*/
+
+.imageCard {
+  width: 100%;
+  background-color: var(--card);
+  padding: calc(var(--mainPadding) / 4);
+  margin: var(--mainMargin) 0;
+
+  &:not(.noCap) {
+    padding-bottom: 0;
+  }
+  
+  figcaption {
+    padding: calc(var(--mainPadding) / 2);
+    text-align: center;
+    font-family: var(--codeFontFamily);
+    font-size: var(--h6Size);
+    line-height: var(--h6LineHeight);
+  }
+}
