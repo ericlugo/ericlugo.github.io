@@ -2,18 +2,19 @@ import React from "react"
 
 import ErrorCardIcon from "./ErrorCardIcon"
 
-import "../sass/components/Image.scss"
+import "../sass/components/ErrorCard.scss"
 
 
-
-
-/* TODO: FINISH ERROR CARD CREATION */
-const ImageCard = ({ Error }) => (
-  <section>
-    <ErrorCardIcon />
-    <p className="alert">{Error}</p>
+const ErrorCard = ({ className, children, Error=false }) => (
+  <section className={className ? `errorCard ${className}` : `errorCard`}>
+    <i className="cardBorder"></i>
+    <div className="cardContent">
+      <ErrorCardIcon />
+      { !!children && children }
+      { !!Error && <p className="alert">{Error}</p> }
+    </div>
   </section>
 )
 
 
-export default ImageCard
+export default ErrorCard

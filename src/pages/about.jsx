@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import PrimaryLayout from "../layout/Primary"
+import ErrorCard from "../components/ErrorCard"
 
 
 export const query = graphql`
@@ -28,15 +29,29 @@ export const query = graphql`
 
 
 const AboutPage = ({ data }) => {
-  const nodes = data.allMdx.nodes.map(node => (
-    <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
-      <p className="mainHeader">{node.frontmatter.title}</p>
-      <p className="subHeader">{node.frontmatter.description}</p>
-      <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
-      <p>{node.excerpt}</p>
-    </Link>
-  ))
+  let nodes = undefined
 
+  // check for available random blog nodes.
+  // if none found display error card with friendly message.
+  if (!data.allMdx.nodes.length) {
+    nodes = <ErrorCard className="missingPosts">
+      <h2>⚠️Oh No⚠️</h2>
+      <p>
+        Sorry, this site is still a work in progress, so there are no post about me yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by. Thanks for visiting! 😊
+      </p>
+    </ErrorCard>
+  }
+  else {
+    nodes = data.allMdx.nodes.map(node => (
+      <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
+        <p className="mainHeader">{node.frontmatter.title}</p>
+        <p className="subHeader">{node.frontmatter.description}</p>
+        <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
+        <p>{node.excerpt}</p>
+      </Link>
+    ))
+  }
+  
   return (
     <PrimaryLayout className="about" withNav={true}>
       <h1 className="mainHeader">Oh, well hello there!</h1>

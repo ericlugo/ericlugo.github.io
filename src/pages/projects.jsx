@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import PrimaryLayout from "../layout/Primary"
+import ErrorCard from "../components/ErrorCard"
 
 
 export const query = graphql`
@@ -45,36 +46,64 @@ export const query = graphql`
 
 
 const ProjectListPage = ({ data }) => {
-  const projects = data.projects.nodes.map(node => (
-    <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
-      <header className="previewHeader">
-        <p className="mainHeader">{node.frontmatter.title}</p>
-        <p className="subHeader">{node.frontmatter.description}</p>
-      </header>
-      <section className="previewBody">
-        <p>{node.excerpt}</p>
-      </section>
-      <footer className="previewFooter">
-        <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
-      </footer>
-    </Link>
-  ))
-  const whiteboard = data.whiteboard.nodes.map(node => (
-    <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
-      <header className="previewHeader">
-        <p className="mainHeader">{node.frontmatter.title}</p>
-        <p className="subHeader">{node.frontmatter.description}</p>
-      </header>
-      <section className="previewBody">
-        <p>{node.excerpt}</p>
-      </section>
-      <footer className="previewFooter">
-        <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
-      </footer>
-    </Link>
-  ))
+  let projects = undefined;
+  let whiteboard = undefined;
+
+  // check for available project nodes.
+  // if none found display error card with friendly message.
+  if (!data.projects.nodes.length) {
+    projects = <ErrorCard className="missingPosts">
+      <h2>⚠️Oh No⚠️</h2>
+      <p>
+        Sorry, this site is still a work in progress, so there are no Projects being showcased just yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by, and this is the first place I'll be adding some content to. Thanks for visiting! 😊
+      </p>
+    </ErrorCard>
+  }
+  else {
+    projects = data.projects.nodes.map(node => (
+      <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
+        <header className="previewHeader">
+          <p className="mainHeader">{node.frontmatter.title}</p>
+          <p className="subHeader">{node.frontmatter.description}</p>
+        </header>
+        <section className="previewBody">
+          <p>{node.excerpt}</p>
+        </section>
+        <footer className="previewFooter">
+          <p className="subText">Category: {node.frontmatter.category}</p>
+          <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
+        </footer>
+      </Link>
+    ))
+  }
+  
+  // check for available whiteboard nodes.
+  // if none found display error card with friendly message.
+  if (!data.projects.nodes.length) {
+    whiteboard = <ErrorCard className="missingPosts">
+      <h2>⚠️Oh No⚠️</h2>
+      <p>
+        Sorry, this site is still a work in progress, so there are no deep dives or retrospectives available here just yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by. Thanks for visiting! 😊
+      </p>
+    </ErrorCard>
+  }
+  else {
+    whiteboard = data.whiteboard.nodes.map(node => (
+      <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
+        <header className="previewHeader">
+          <p className="mainHeader">{node.frontmatter.title}</p>
+          <p className="subHeader">{node.frontmatter.description}</p>
+        </header>
+        <section className="previewBody">
+          <p>{node.excerpt}</p>
+        </section>
+        <footer className="previewFooter">
+          <p className="subText">Category: {node.frontmatter.category}</p>
+          <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
+        </footer>
+      </Link>
+    ))
+  }
 
   return (
     <PrimaryLayout className="projects" withNav={true}>

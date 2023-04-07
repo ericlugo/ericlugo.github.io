@@ -1,0 +1,105 @@
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+}
+
+.errorCard {
+  --modifier: 2.41421356237; //used to make sure element is covered as rotation animates
+  --borderSize: 4px; // sets the thickness of the animated glow border
+  --innerBorder: 1px; // sets the thickness of the rail the glow rides on
+  --borderGradient: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--accent1) 0deg,
+    var(--accent1) 30deg,
+    var(--accent2) 120deg,
+    #00000000 160deg,
+    #00000000 180deg,
+    var(--accent1) 180deg,
+    var(--accent1) 210deg,
+    var(--accent2) 300deg,
+    #00000000 340deg,
+    #00000000 360deg
+  );
+
+  position: relative;
+  margin: var(--mainMargin) auto;
+  cursor: pointer;
+  max-width: 600px;
+  padding: calc(var(--innerBorder) + var(--borderSize));
+  overflow: hidden;
+  border-radius: var(--borderRadius);
+
+  & > .cardBorder {
+    position: absolute;
+    inset: var(--borderSize);
+    border-radius: calc(var(--borderRadius) + var(--borderSize));
+    z-index: -1;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: var(--borderSize);
+    transition: opacity 1s;
+    opacity: 0;
+
+    &::before {
+      content: "";
+      background-image: var(--borderGradient);
+      position: absolute;
+      width: calc(100% * var(--modifier));
+      aspect-ratio: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      z-index: -2;
+      animation: spin 5s linear infinite;
+    }
+  }
+  
+  &:hover > .cardBorder {
+    opacity: 1;
+  }
+
+  & > .cardContent {
+    background-color: transparent;
+    padding: var(--mainPadding) calc(var(--mainPadding) * 2);
+    border: var(--innerBorder) solid hsl(0 0% 100% / 0.1);
+    border-radius: var(--borderRadius);
+    text-align: center;
+    user-select: none;
+
+    h1, h2 {
+      font-size: var(--h2Size);
+      line-height: var(--h2LineHeight);
+      font-weight: var(--heavy);
+    }
+    p {
+      font-size: var(--h5Size);
+      line-height: var(--h5LineHeight);
+    }
+    .alert {
+      font-family: var(--codeFontFamily);
+
+    }
+  }
+
+  svg {
+
+    .background {
+      fill: var(--background);
+    }
+  
+    .accent {
+      fill: var(--accent1);
+    }
+  
+    .ink {
+      fill: var(--foreground);
+    }
+  }
+}

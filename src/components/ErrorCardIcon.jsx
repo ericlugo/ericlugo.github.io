@@ -3,7 +3,7 @@ import React from "react"
 
 const ErrorCardIcon = _ => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" version="1.1">
-    <g id="react-group-221" stroke="none" stroke-width="1" className="background" fill-rule="evenodd">
+    <g id="react-group-221" stroke="none" strokeWidth="1" className="background" fillRule="evenodd">
       <g id="react-group-222">
         <rect id="react-rect-224" x="0" y="0" width="1024" height="768">
         </rect>

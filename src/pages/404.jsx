@@ -1,48 +1,21 @@
-import * as React from "react"
+import React from "react"
 import { Link } from "gatsby"
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import PrimaryLayout from "../layout/Primary"
+import ErrorCard from "../components/ErrorCard"
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-const NotFoundPage = () => {
-  return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
+const NotFoundPage = () => (
+  <PrimaryLayout className="404" withNav={true}>
+    <ErrorCard>
+      <h1>💀 404 💀</h1>
+      <p>
         Sorry 😔, we couldn’t find what you were looking for.
         <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
+        <Link to="/">Click here to go home</Link>.
       </p>
-    </main>
-  )
-}
+    </ErrorCard>
+  </PrimaryLayout>
+)
 
 export default NotFoundPage
 

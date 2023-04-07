@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import PrimaryLayout from "../layout/Primary"
+import ErrorCard from "../components/ErrorCard"
 
 
 export const query = graphql`
@@ -28,21 +29,35 @@ export const query = graphql`
 
 
 const NoteListPage = ({ data }) => {
-  const nodes = data.allMdx.nodes.map(node => (
-    <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
-      <header className="previewHeader">
-        <p className="mainHeader">{node.frontmatter.title}</p>
-        <p className="subHeader">{node.frontmatter.description}</p>
-      </header>
-      <section className="previewBody">
-        <p>{node.excerpt}</p>
-      </section>
-      <footer className="previewFooter">
-        <p className="subText">Category: {node.frontmatter.category}</p>
-        <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
-      </footer>
-    </Link>
-  ))
+  let nodes = undefined
+
+  // check for available note nodes.
+  // if none found display error card with friendly message.
+  if (!data.allMdx.nodes.length) {
+    nodes = <ErrorCard className="missingPosts">
+      <h2>⚠️Oh No⚠️</h2>
+      <p>
+        Sorry, this site is still a work in progress, so there are no blog posts yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by. Thanks for visiting! 😊
+      </p>
+    </ErrorCard>
+  }
+  else {
+    nodes = data.allMdx.nodes.map(node => (
+      <Link className="previewCard" to={'/'+node.frontmatter.slug} key={node.id}>
+        <header className="previewHeader">
+          <p className="mainHeader">{node.frontmatter.title}</p>
+          <p className="subHeader">{node.frontmatter.description}</p>
+        </header>
+        <section className="previewBody">
+          <p>{node.excerpt}</p>
+        </section>
+        <footer className="previewFooter">
+          <p className="subText">Category: {node.frontmatter.category}</p>
+          <p className="subText">Last Edited: {node.frontmatter.edited_date}</p>
+        </footer>
+      </Link>
+    ))
+  }
 
   return (
     <PrimaryLayout className="notes" withNav={true}>
