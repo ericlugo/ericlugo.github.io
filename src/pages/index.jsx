@@ -17,8 +17,9 @@ const IndexPage = () => (
     <MainNav />
     <p>
       If you want to see some of the stuff I've made, you can go to <Link to="/projects/">Projects</Link>.
-      Want to read some of the things I've tried explaining? Click on <Link to="/blog/">Blog</Link>.
+      Maybe you want to read some of the things I've tried explaining? Click or tap on <Link to="/blog/">Blog</Link>.
       For random things I recommend you can check out <Link to="/notes/">Notes</Link>.
+      I've made a small place to also share some things about myself, so if you're curious about me, feel free to go to <Link to="/about/">About Me</Link>.
     </p>
     <p>
       Thanks for visiting, and I sincerely hope you have a wonderful day.

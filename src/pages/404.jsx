@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import PrimaryLayout from "../layout/Primary"
 import ErrorCard from "../components/ErrorCard"
 
+
 const NotFoundPage = () => (
   <PrimaryLayout className="404" withNav={true}>
     <ErrorCard>
@@ -17,6 +18,8 @@ const NotFoundPage = () => (
   </PrimaryLayout>
 )
 
+
 export default NotFoundPage
+
 
 export const Head = () => <title>Not found</title>

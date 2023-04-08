@@ -1,7 +1,7 @@
 import React from "react"
 
 
-const ErrorCardIcon = _ => (
+const ErrorCardIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" version="1.1">
     <g id="react-group-221" stroke="none" strokeWidth="1" className="background" fillRule="evenodd">
       <g id="react-group-222">
