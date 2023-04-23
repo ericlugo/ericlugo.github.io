@@ -25,22 +25,23 @@
         padding: min(20vh, var(--mainPadding) * 8) min(10vw, var(--mainPadding) * 1.5);
         background-color: var(--menu-background-heavy);
         transform: translateX(110%);
-        @media (prefers-reduced-motion: no-preference) {
-          & {
-            transition: transform 0.3s ease-out;
-          }
-        }
 
         @supports (backdrop-filter: blur(1rem)) {
           & {
             background-color: var(--menu-background-light);
             backdrop-filter: blur(1rem);
-            filter: drop-shadow(1px 2px 3px hsl(0 0% 0% / 0.5));
+            filter:
+              drop-shadow(1px 2px 3px hsl(0 0% 0% / 0.5));
           }
         }
 
         &[data-visible="true"] {
           transform: translateX(0%);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition:
+            transform var(--baseDuration) ease-out;
         }
       }
 

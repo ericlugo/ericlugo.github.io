@@ -7,14 +7,27 @@ import MobileNavToggle from "./MobileNavToggle"
 import "../sass/components/Nav.scss"
 
 
-const NavLink = ({item, isCurrentPath}) => {
-  const arrow = isCurrentPath ? '-->' : '>'
-
-  return <li data-target={item.path}><Link to={item.path}> <span className="arrow" aria-hidden="true">{arrow}</span> {item.label} </Link></li>
+const NavLink = ({ item, isCurrentPath, onClick }) => {
+  if (isCurrentPath) return (
+    <li data-target={item.path}>
+      <Link to={item.path} onClick={_ => { onClick(); return false; }}>
+        <span className="arrow" aria-hidden="true">--&gt;</span>
+        {item.label}
+      </Link>
+    </li>
+  )
+  else return (
+    <li data-target={item.path}>
+      <Link to={item.path}>
+        <span className="arrow" aria-hidden="true">&gt;</span>
+        {item.label}
+      </Link>
+    </li>
+  )
 }
 
 
-const MainNav = ({className, isPrimary=false}) => {
+const MainNav = ({ className, isPrimary=false }) => {
   const [expanded, setExpanded] = useState(false)
   const toggleHandler = _ => {
     setExpanded(!expanded)
@@ -28,7 +41,7 @@ const MainNav = ({className, isPrimary=false}) => {
             <ul className={`nav${className ? ' '+className : ''}`}>
               {navLinks.map((item, index) => {
                 let isCurrentPath = currentPath===item.path
-                return <NavLink key={index} item={item} isCurrentPath={isCurrentPath} />
+                return <NavLink key={index} item={item} isCurrentPath={isCurrentPath} onClick={toggleHandler} />
               })}
             </ul>
           </nav>

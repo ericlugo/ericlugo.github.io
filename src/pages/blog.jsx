@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import PrimaryLayout from "../layout/Primary"
-import ErrorCard from "../components/ErrorCard"
+import ErrorCard from "../components/SVGCard"
 
 
 export const query = graphql`
@@ -34,7 +34,7 @@ const BlogListPage = ({ data }) => {
   // check for available blog post nodes.
   // if none found display error card with friendly message.
   if (!data.allMdx.nodes.length) {
-    nodes = <ErrorCard className="missingPosts">
+    nodes = <ErrorCard className="missingPosts" type="error">
       <h2>⚠️Oh No⚠️</h2>
       <p>
         Sorry, this site is still a work in progress, so there are no blog posts yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by. Thanks for visiting! 😊

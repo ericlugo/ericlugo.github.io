@@ -10,13 +10,16 @@ body {
 
 [data-loading="complete"] body {
   @media (prefers-reduced-motion: no-preference) {
-    transition: background-color .15s ease-in, color .15s ease-in;
+    transition:
+      background-color var(--baseTimingShorthand),
+      color var(--baseTimingShorthand);
   }
 }
 
 [data-loading="complete"] a {
   @media (prefers-reduced-motion: no-preference) {
-    transition: color .15s ease-in;
+    transition:
+      color var(--baseTimingShorthand);
   }
 }
 
@@ -87,7 +90,9 @@ ul, ol {
 
 [data-loading="complete"] :where(.layoutContainer) {
   @media (prefers-reduced-motion: no-preference) {
-    transition: color .15s ease-in, background-color .15s ease-in;
+    transition:
+      color var(--baseTimingShorthand),
+      background-color var(--baseTimingShorthand);
   }
 }
 

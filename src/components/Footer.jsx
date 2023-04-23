@@ -7,25 +7,27 @@ import SocialNav from "./SocialNav"
 import "../sass/components/Footer.scss"
 
 
-const Footer = ({ className }) => (
-  <footer id="siteFooter" className={className}>
-    <div className="widthContainer">
-      <MainNav />
-      <SocialNav />
-      <div className="copy">
-        <div className="credit">
-          Icons courtesy of:{" "}
-          <a href="https://feathericons.com/" target="_blank" rel="noreferrer noopener"><span><FiFeather />FeatherIcons</span></a>
-        </div>
-        <div className="copyright">
-          copyright &copy; Eric Lugo {new Date().getFullYear()}
-          <br />
-          all rights reserved
+const Footer = ({ className }) => {
+  return (
+    <footer id="siteFooter" className={className}>
+      <div className="widthContainer">
+        <MainNav />
+        <SocialNav />
+        <div className="copy">
+          <div className="credit">
+            Icons courtesy of:{" "}
+            <a href="https://feathericons.com/" target="_blank" rel="noreferrer noopener"><span><FiFeather />FeatherIcons</span></a>
+          </div>
+          <div className="copyright">
+            copyright &copy; Eric Lugo {new Date().getFullYear()}
+            <br />
+            all rights reserved
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-)
+    </footer>
+  )
+}
 
 
 export default Footer

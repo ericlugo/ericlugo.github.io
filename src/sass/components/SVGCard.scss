@@ -7,7 +7,7 @@
   }
 }
 
-.errorCard {
+.svgCard {
   --modifier: 2.41421356237; //used to make sure element is covered as rotation animates
   --borderSize: 4px; // sets the thickness of the animated glow border
   --innerBorder: 1px; // sets the thickness of the rail the glow rides on
@@ -43,7 +43,6 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     padding: var(--borderSize);
-    transition: opacity 1s;
     opacity: 0;
 
     &::before {
@@ -58,6 +57,11 @@
       border-radius: 100%;
       z-index: -2;
       animation: spin 5s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        opacity 1s var(--baseTimingFunction);
     }
   }
   

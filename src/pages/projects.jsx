@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import PrimaryLayout from "../layout/Primary"
-import ErrorCard from "../components/ErrorCard"
+import ErrorCard from "../components/SVGCard"
 
 
 export const query = graphql`
@@ -52,7 +52,7 @@ const ProjectListPage = ({ data }) => {
   // check for available project nodes.
   // if none found display error card with friendly message.
   if (!data.projects.nodes.length) {
-    projects = <ErrorCard className="missingPosts">
+    projects = <ErrorCard className="missingPosts" type="error">
       <h2>⚠️Oh No⚠️</h2>
       <p>
         Sorry, this site is still a work in progress, so there are no Projects being showcased just yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by, and this is the first place I'll be adding some content to. Thanks for visiting! 😊
@@ -80,7 +80,7 @@ const ProjectListPage = ({ data }) => {
   // check for available whiteboard nodes.
   // if none found display error card with friendly message.
   if (!data.projects.nodes.length) {
-    whiteboard = <ErrorCard className="missingPosts">
+    whiteboard = <ErrorCard className="missingPosts" type="error">
       <h2>⚠️Oh No⚠️</h2>
       <p>
         Sorry, this site is still a work in progress, so there are no deep dives or retrospectives available here just yet! Please check back in soon since I'm actively adding to the different areas of this site as time goes by. Thanks for visiting! 😊

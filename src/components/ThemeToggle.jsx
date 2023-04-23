@@ -1,6 +1,6 @@
 import React from "react"
 
-import ThemeToggleIcon from "./ThemeToggleIcon"
+import ThemeToggleIcon from "./SVGImage_ThemeToggle"
 
 import '../sass/components/ThemeToggle.scss'
 import { reflectPreference, enableTimings, onClick } from "../lib/theme-common"

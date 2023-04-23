@@ -1,0 +1,174 @@
+@use "sass:map";
+@use "../foundation/abstracts" as *;
+
+
+/* == Contact Card Styles ================================================== */
+.contactCard {
+  --contact-background: var(--background);
+  --contact-border: 2px solid var(--foreground);
+  --contact-main-color: var(--foreground);
+  --contact-main-color-inactive: var(--foregroundTranslucent);
+  --contact-active-color: var(--accent1);
+
+  h1{
+    text-align: center;
+    font-size: var(--h2Size);
+    line-height: var(--h2LineHeight);
+  }
+
+  .warningPanel {
+    width: fit-content;
+    margin: var(--mainMargin) auto calc(var(--mainMargin) * 1.5);
+    padding: calc(var(--mainPadding) / 2);
+    background-color: var(--card);
+    border-radius: var(--borderRadius);
+
+    h2 {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: var(--h3Size);
+      line-height: var(--h3LineHeight);
+
+      .small {
+        display: inline-block;
+        font-size: var(--h5Size);
+      }
+    }
+  
+    ul {
+      margin-top: 0;
+      text-align: center;
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+
+  .contactForm {
+    background-color: var(--contact-background);
+    margin: var(--mainMargin) 0;
+    
+    .form-item {
+      position: relative;
+      margin: 0 0 var(--mainMargin) 0;
+      
+      .form-label {
+        pointer-events: none;
+        position: absolute;
+        display: inline-block;
+        padding: 0 10px;
+        background-color: var(--contact-background);
+        left: 0;
+        transform-origin: center center;
+        transform: translate(10px, 40%);
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: 
+            transform var(--baseTimingShorthand),
+            color var(--baseTimingShorthand);
+        }
+      }
+
+      .form-field {
+        position: relative;
+        background-color: var(--contact-background);
+        color: var(--contact-main-color);
+        border: var(--contact-border);
+        border-radius: var(--borderRadius);
+        padding: calc(var(--mainPadding) / 2) var(--mainPadding);
+        width: 100%;
+        outline: none;
+        cursor: pointer;
+        
+        &:where([data-value=""]) + .form-label {
+          color: var(--contact-main-color-inactive);
+        }
+
+        &:where(:active, :focus), &:not([data-value=""]) {
+          & + .form-label {
+            transform: translate(10px, -50%) scale(.8);
+          }
+        }
+
+        &:where(:hover) {
+          border-color: var(--contact-active-color);
+        }
+
+        &:where(:active, :focus) {
+          border-color: var(--contact-active-color);
+          color: var(--contact-active-color);
+
+          & + .form-label {
+            color: var(--contact-active-color);
+          }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: 
+            border-color var(--baseTimingShorthand),
+            color var(--baseTimingShorthand);
+        }
+      }
+    }
+
+    .form-submit {
+      background-color: var(--contact-background);
+      color: var(--contact-main-color);
+      border: var(--contact-border);
+      border-radius: var(--borderRadius);
+      padding: calc(var(--mainPadding) / 2) var(--mainPadding);
+      margin: 0 0 var(--mainMargin) 0;
+      width: 100%;
+      outline: none;
+      cursor: pointer;
+
+      &:where(:hover, :active, :focus) {
+        border-color: var(--contact-active-color);
+        color: var(--contact-active-color);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: 
+          border-color var(--baseTimingShorthand),
+          color var(--baseTimingShorthand);
+      }
+    }
+  
+    @media (min-width: map.get($breakpoint, "xs")) {
+      display: grid;
+      gap: var(--mainMargin);
+      grid-template-areas: 
+        "name    phone"
+        "email   email"
+        "message message"
+        "send    send";
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: repeat(2, 1fr);
+      
+      [data-name="name"] {
+        grid-area: name;
+      }
+
+      [data-name="phone"] {
+        grid-area: phone;
+      }
+
+      [data-name="email"] {
+        grid-area: email;
+      }
+
+      [data-name="message"] {
+        grid-area: message;
+      }
+
+      .form-submit {
+        grid-area: send;
+      }
+
+      .form-item, .form-submit {
+        margin: 0;
+      }
+    }
+  }
+}

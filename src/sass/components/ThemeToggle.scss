@@ -62,7 +62,7 @@
   .theme-toggle .sun-and-moon {
     @media (prefers-reduced-motion: no-preference) {
       & > .sun {
-        transition: transform .5s var(--ease-elastic-3);
+        transition: transform .5s var(--baseTimingFunction);
       }
   
       & > .sun-beams {

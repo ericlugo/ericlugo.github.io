@@ -45,9 +45,6 @@
       background-color: var(--card);
       padding: var(--mainPadding);
       border-radius: var(--borderRadius);
-      transition:
-        color .3s ease-in,
-        background-color .3s ease-in;
 
       &:not(:last-child) {
         margin-bottom: var(--mainMargin);
@@ -64,8 +61,13 @@
         height: 100%;
         border-radius: var(--borderRadius);
         opacity: 0;
-        transition: opacity .3s ease-in;
-        filter: drop-shadow(1px 2px 3px var(--accent1Translucent));
+        filter:
+          drop-shadow(1px 2px 3px var(--accent1Translucent));
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition:
+            opacity var(--baseTimingShorthand);
+        }
       }
 
       &:is(:hover, :active, :focus-visible) {
@@ -74,6 +76,12 @@
         &::after {
           opacity: 1;
         }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition:
+          color var(--baseTimingShorthand),
+          background-color var(--baseTimingShorthand);
       }
 
       p {
@@ -93,6 +101,12 @@
   }
 
   .content {
+    @media (max-width: calc(map.get($breakpoint, "xs") - 1px)) {
+      .widthContainer > :not(:where(.heroContainer, .imageCard)) {
+        padding: 0 0.5rem;
+      }
+    }
+
     h2 {
       font-size: var(--h4Size);
       font-weight: var(--regular);

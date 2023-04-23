@@ -31,9 +31,6 @@
 
     path {
       fill: none;
-      transition:
-        stroke-dashoffset .5s var(--ease-elastic-3),
-        stroke-dasharray .5s var(--ease-elastic-3);
       stroke-width: 2.5rem;
       stroke: var(--icon-stroke);
       stroke-dashoffset: 0px;
@@ -43,6 +40,12 @@
       }
       &:where(#middle){
         stroke-dasharray: 240px 240px;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition:
+          stroke-dashoffset .5s var(--baseTimingFunction),
+          stroke-dasharray .5s var(--baseTimingFunction);
       }
     }
   }

@@ -38,6 +38,11 @@
   --borderRadius:             #{ $referenceSpacing };
   --borderWidth:              #{ $referenceLineWidth };
 
+  /* Timing for Animations */
+  --baseDuration:             #{ $referenceDuration };
+  --baseTimingFunction:       #{ $referenceTimingFunction };
+  --baseTimingShorthand:      #{ $referenceDuration $referenceTimingFunction };
+
   /* Default Palette */
   --background:               #{ map.get($color-default, "background") };
   --menu-background-light:    #{ map.get($color-default, "menu-background-light") };
@@ -45,6 +50,7 @@
   --card:                     #{ map.get($color-default, "card") };
   --card-hover:               #{ map.get($color-default, "card-hover") };
   --foreground:               #{ map.get($color-default, "foreground") };
+  --foregroundTranslucent:    #{ map.get($color-default, "foregroundTranslucent") };
   --accent1:                  #{ map.get($color-default, "accent1") };
   --accent1-hover:            #{ map.get($color-default, "accent1-hover") };
   --accent1Translucent:       #{ map.get($color-default, "accent1Translucent") };
@@ -65,6 +71,7 @@
   --card:                     #{ map.get($color-dark, "card") };
   --card-hover:               #{ map.get($color-dark, "card-hover") };
   --foreground:               #{ map.get($color-dark, "foreground") };
+  --foregroundTranslucent:    #{ map.get($color-dark, "foregroundTranslucent") };
   --accent1:                  #{ map.get($color-dark, "accent1") };
   --accent1-hover:            #{ map.get($color-dark, "accent1-hover") };
   --accent1Translucent:       #{ map.get($color-dark, "accent1Translucent") };
