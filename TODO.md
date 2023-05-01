@@ -22,8 +22,8 @@
 19) [x] Setup the mailto form to work with `formsubmit.co`.
 20) [x] Make sure the form is completely mobile-first.
 21) [x] Change all components to have actual return statements instead of implicit returns.
-22) [ ] Update `About Me` page.
-23) [ ] Update `random/a-brief-history-of-me` post.
+22) [x] Update `About Me` page.
+23) [x] Update `random/a-brief-history-of-me` post.
 24) [ ] Take showcase images of `fathering.me`.
 25) [ ] Create project post for `fathering.me`.
 26) [ ] Create project preview cards for the `Projects` page.
