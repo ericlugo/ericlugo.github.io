@@ -5,19 +5,20 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 import "../sass/components/ImageCard.scss"
 
 
-const ImageCard = ({ src, alt, caption=false, ar="16 / 9" }) => {
+const ImageCard = ({ src, alt, caption=false, bordered=true, ar="16 / 9" }) => {
   const imagePath = new CloudinaryImage(src, {cloudName: "elugo-dev-cloud"})
-    .namedTransformation('t_natural')
-    .toURL()
+  .namedTransformation('t_natural')
+  .toURL()
   const placeholderPath = new CloudinaryImage(src, {cloudName: "elugo-dev-cloud"})
-    .namedTransformation('t_placeholder_natural')
-    .toURL()
-
-    console.log(imagePath)
-    console.log(placeholderPath)
-
+  .namedTransformation('t_placeholder_natural')
+  .toURL()
+  
+  let imageCardClass = 'imageCard';
+  if (!caption) imageCardClass += ' noCaption';
+  if (bordered==='false') imageCardClass += ' noBorder';
+  
   return (
-    <figure className={caption ? 'imageCard' : 'imageCard noCap'}>
+    <figure className={imageCardClass}>
       <LazyLoadImage
         className='postImage'
         src={imagePath}

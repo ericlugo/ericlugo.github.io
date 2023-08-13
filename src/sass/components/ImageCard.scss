@@ -10,7 +10,7 @@
   padding: calc(var(--mainPadding) / 4);
   margin: var(--mainMargin) 0;
 
-  &:not(.noCap) {
+  &:not(.noCaption) {
     padding-bottom: 0;
   }
   
@@ -20,5 +20,10 @@
     font-family: var(--codeFontFamily);
     font-size: var(--h6Size);
     line-height: var(--h6LineHeight);
+  }
+
+  &.noBorder {
+    padding: 0;
+    line-height: 0;
   }
 }

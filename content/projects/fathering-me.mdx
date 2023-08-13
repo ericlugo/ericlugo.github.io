@@ -1,0 +1,98 @@
+---
+title: fathering.me
+slug: projects/fathering-me
+description: Showcase of serverless site build for a local non-profit organization.
+hero: portfolio/projects/fathering.me/fathering-me-hero
+alt: one dad at a time
+created-date: 2023-05-01
+edited-date: 2023-08-12
+category: Project
+languages: JS
+libraries: React
+frameworks: Gatsby.js
+other: styled components
+---
+
+### Who?
+##### (Who is the project for? Also if relevant, where does the client operate?)
+
+fathering.me is a local non-profit group dedicated to helping at-risk families get needed support and community in order through some of the most taxing moments when starting a new family.
+
+They can be found online at:
+<br /><ExternalLink URL="https://fathering.me/">https://fathering.me/</ExternalLink>
+<br /><ExternalLink URL="https://www.facebook.com/fathering.me/">https://www.facebook.com/fathering.me/</ExternalLink>
+<br /> The organization operates in-person in and around the Harrisburg, PA, US area.
+
+### What?
+##### (What does the tech stack look like?)
+
+fathering.me is a <ExternalLink URL="https://react.dev/">React.js</ExternalLink> project built leveraging the <ExternalLink URL="https://www.gatsbyjs.com/">Gatsby Framework</ExternalLink> to generate a static site which is hosted on <ExternalLink URL="https://www.netlify.com/">Netlify</ExternalLink>. The site also inherited some needed integrations from the prior iteration of the project, so it is currently integrated with <ExternalLink URL="https://www.givingfuel.com/">GivingFuel</ExternalLink> to support secure donations.
+
+### Where?
+##### (Where did I actually do stuff for the project? Also, where did I run into any issues or get stuck?)
+
+Everything on the site was designed in direct collaboration with the stakeholders and the site consists of five pages, each with the same basic single-column layout since mobile-support was paramount to the team.
+
+The `Landing Page` is the main area of the website. Largely consisting of various images paired with large text made to be easily readable, and reminiscent of a poster, this provides most of the information a visitor might need right up front.
+
+<ImageCard
+  src="portfolio/projects/fathering.me/fathering-me-home"
+  alt="an overview of the full scrolling layout"
+  ar="1378 / 4617"
+  bordered="false"
+/>
+
+There is a basic contact form on the `Landing Page` but two other forms were needed for the initial design. Although the design for both forms was exactly the same the stakeholders wanted them to be separate since each might at some point contain completely different content on the page as future decisions were made. These are the `Mailing List` and the `Mentor Signup`.
+
+<ImageCard
+  src="portfolio/projects/fathering.me/fathering-me-signup"
+  alt="screenshot of the mailing list signup form"
+  ar="1378 / 816"
+  bordered="false"
+/>
+
+<ImageCard
+  src="portfolio/projects/fathering.me/fathering-me-mentor"
+  alt="screenshot of the fathering.me mentor signup form"
+  ar="1378 / 880"
+  bordered="false"
+/>
+
+The integrations that were needed for this project were pre-existing pieces that carried over from the previous iteration and only work through embedding so the pages were made to try and make that feel as natural possible. Those pages are the `Mentor Sponsorship` and the `fathering.me Donations`.
+
+These integrations were the one part of the project where I found myself stuck for a short while as I took some time to learn more about `Gatsby` under the hood, since I was still pretty new to working with it. 
+
+For `React`, embedded content is standard fare. However, `Gatsby` is a Static Site Renderer based on `React`. While everything is made with `React`, and it feels just like using vanilla `React` a lot of the time, it should always be noted that a build time is required for the final product. When attempting to build this site using standard embeds, you run into errors because `React` is being run in a `Node` environment instead of a Browser.
+
+Since speed was of the essence with this project, I opted for a simple solution by just creating a hook that allowed me to check whether `React` was mounted or not. With `Gatsby` once the pre-built site is loaded by a client `React` will hydrate and mount, so the components will not attempt to populate the embedded content during build time preventing errors.
+
+<ImageCard
+  src="portfolio/projects/fathering.me/fathering-me-sponsor"
+  alt="screenshot of the mentor sponsorship donation page"
+  ar="1378 / 1680"
+  bordered="false"
+/>
+
+<ImageCard
+  src="portfolio/projects/fathering.me/fathering-me-donate"
+  alt="screenshot of the fathering.me organization donation page"
+  ar="1378 / 1907"
+  bordered="false"
+/>
+
+### When?
+##### (When was the project made and what is its status?)
+
+This project was made and launched over the course of a couple of weeks in winter of 2019. The site is currently still active in its current state. Although there have been no major changes since its initial launch, as of Summer 2023, the site is currently undergoing a migration from CSS-in-JS to SASS in preparation for a move to be rebuilt using Python and Django per the stakeholders’ request.
+
+### Why?
+##### (Why was the project taken on?)
+
+To me, who was raised by a single mother, fathering.me’s cause is one that is near and dear to my heart so I was interested in ways to help the organization from the moment I heard about it.
+
+At the time of this project’s inception, the previous site’s hosting was about to expire and, although the organization wanted to maintain a web presence, they didn’t have the traffic needed to warrant a business hosting account so they wanted to achieve two things:
+
+1. Revamp the site’s look and feel, and
+2. decrease operating costs until they felt web traffic was enough to warrant expansion for the organization’s provisions.
+
+From these two primary edicts came the suggestion to go completely serverless, and due to the urgency of the timeline, things were kept as simple as possible while allowing for room to grow by ensuring that they were no longer tied down to a specific vendor.

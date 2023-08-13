@@ -148,6 +148,10 @@
 
     ul, ol {
       margin-left: calc(var(--mainMargin) / 2);
+    
+      @media (max-width: map.get($breakpoint, "xs")) {
+        margin-left: var(--mainMargin);
+      }
     }
 
     .contentHeader {
@@ -169,6 +173,7 @@
     }
 
     .externalLink  {
+
       svg {
         display: inline-block;
       }

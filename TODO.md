@@ -24,7 +24,7 @@
 21) [x] Change all components to have actual return statements instead of implicit returns.
 22) [x] Update `About Me` page.
 23) [x] Update `random/a-brief-history-of-me` post.
-24) [ ] Take showcase images of `fathering.me`.
+24) [x] Take showcase images of `fathering.me`.
 25) [ ] Create project post for `fathering.me`.
 26) [ ] Create project preview cards for the `Projects` page.
 
