@@ -60,7 +60,7 @@ const RandomListPage = ({ data }) => {
   }
 
   return (
-    <PrimaryLayout className="random" withNav={true}>
+    <PrimaryLayout className="random" withNav={true} title="My Thoughts">
       <h1 className="mainHeader">My Random Thoughts</h1>
       <section>
         <p>
@@ -90,6 +90,3 @@ const RandomListPage = ({ data }) => {
 
 
 export default RandomListPage
-
-
-export const Head = () => <title>My Random Thoughts</title>

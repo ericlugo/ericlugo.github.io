@@ -60,7 +60,7 @@ const NoteListPage = ({ data }) => {
   }
 
   return (
-    <PrimaryLayout className="notes" withNav={true}>
+    <PrimaryLayout className="notes" withNav={true} title="Recommendations">
       <h1 className="mainHeader">Miscellaneous Recommendations</h1>
       <section>
         <p>
@@ -84,6 +84,3 @@ const NoteListPage = ({ data }) => {
 
 
 export default NoteListPage
-
-
-export const Head = () => <title>Miscellaneous Recommendations</title>

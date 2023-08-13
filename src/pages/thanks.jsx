@@ -7,7 +7,7 @@ import ThankYouCard from "../components/SVGCard"
 
 const ThanksPage = () => {
   return (
-    <PrimaryLayout className="thanks" withNav={true}>
+    <PrimaryLayout className="thanks" withNav={true} title="Thanks!">
       <ThankYouCard type="thanks">
         <h1>I appreciate you reaching out.</h1>
         <p>
@@ -23,6 +23,3 @@ const ThanksPage = () => {
 
 
 export default ThanksPage
-
-
-export const Head = () => <title>Thank You</title>

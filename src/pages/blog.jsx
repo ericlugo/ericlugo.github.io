@@ -60,7 +60,7 @@ const BlogListPage = ({ data }) => {
   }
 
   return (
-    <PrimaryLayout className="blog" withNav={true}>
+    <PrimaryLayout className="blog" withNav={true} title="My Dev Blog">
       <h1 className="mainHeader">My Dev Blog</h1>
       <section>
         <p>
@@ -93,6 +93,3 @@ const BlogListPage = ({ data }) => {
 
 
 export default BlogListPage
-
-
-export const Head = () => <title>My Dev Blog</title>

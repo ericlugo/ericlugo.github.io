@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Eric Lugo's Dev Blog`,
+    title: `ericlugo.dev`,
+    description: `Eric Lugo's Dev Blog`,
+    twitterUsername: `@ericthelugo`,
+    image: `https://res.cloudinary.com/elugo-dev-cloud/image/upload/v1680639911/portfolio/sky-whale.png`,
+    icon: `https://res.cloudinary.com/elugo-dev-cloud/image/upload/v1691964888/portfolio/favicon.svg`,
     siteUrl: `https://ericlugo.dev`,
   },
   plugins: [

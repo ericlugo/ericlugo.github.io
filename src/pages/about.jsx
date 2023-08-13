@@ -53,7 +53,7 @@ const AboutPage = ({ data }) => {
   }
   
   return (
-    <PrimaryLayout className="about" withNav={true}>
+    <PrimaryLayout className="about" withNav={true} title="About Me">
       <h1 className="mainHeader">Oh, well hello there!</h1>
       <section>
         <p className="subHeader">
@@ -98,6 +98,3 @@ const AboutPage = ({ data }) => {
 
 
 export default AboutPage
-
-
-export const Head = () => <title>About Me</title>

@@ -25,6 +25,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        alt_title
         slug
         edited_date(formatString: "YYYY-MM-DD")
         category
@@ -43,7 +44,7 @@ const ContentTemplate = ({ data, children }) => {
   } : false
 
   return (
-    <PrimaryLayout className={imgData ? "content" : "content borderTop"} data={data} withNav={true}>
+    <PrimaryLayout className={imgData ? "content" : "content borderTop"} data={data} withNav={true} title={data.mdx.frontmatter.alt_title}>
       {imgData ? <Hero imgData={imgData}/> : ''}
       <header className="contentHeader">
         <h1 className="mainHeader">{data.mdx.frontmatter.title}</h1>
@@ -61,6 +62,3 @@ const ContentTemplate = ({ data, children }) => {
 
 
 export default ContentTemplate
-
-
-export const Head = ({ data }) => <title>{data.mdx.frontmatter.title}</title>

@@ -7,7 +7,7 @@ import ErrorCard from "../components/SVGCard"
 
 const NotFoundPage = () => {
   return (
-    <PrimaryLayout className="404" withNav={true}>
+    <PrimaryLayout className="404" withNav={true} title="Not Found">
       <ErrorCard type="error">
         <h1>💀 404 💀</h1>
         <p>
@@ -23,6 +23,3 @@ const NotFoundPage = () => {
 
 
 export default NotFoundPage
-
-
-export const Head = () => <title>Not found</title>
